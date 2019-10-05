@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>ES6入门——Set和Map数据结构</title>
+
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+    <link rel="stylesheet" href="../css/page.css">
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+        }
+    </style>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <aside class="page-aside">
+            <div class="aside-tool">
+                <button type="button" class="home-btn"><i></i></button>
+                <button type="button" class="list-btn"><i></i></button>
+            </div>
+            <ul class="aside-list">
+                <li class="list-item">1.一级标题
+                    <ul class="second-list">
+                        <li class="list-item">1.1二级标题,二级标题二级标题</li>
+                        <li class="list-item">1.2二级标题</li>
+                        <li class="list-item">1.3二级标题</li>
+                    </ul>
+                </li>
+                <li class="list-item">2.一级标题,一级标题</li>
+                <li class="list-item">3.一级标题</li>
+                <li class="list-item">4.一级标题</li>
+                <li class="list-item">5.一级标题</li>
+                <li class="list-item">6.一级标题</li>
+            </ul>
+        </aside>
+        <article class="page-article">
+            <div class="article-inner">
+                <h1 id="es6%e5%85%a5%e9%97%a8set%e5%92%8cmap%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84">ES6入门——Set和Map数据结构</h1>
+                <h2 id="set">Set</h2>
+                <p>ES6提供了新的数据结构Set。类似于数组，只不过其成员值都是唯一的，没有重复的值。
+                    Set本身是一个构造函数，用来生成Set数据结构。</p>
+                <p>Internet Explorer 将向这个页面所在的目录发出一个请求
+                    Safari and Chrome 将发出对这个页面的一个请求。
+                    Firefox 3 和更早的版本所采取的动作和Safari and Chrome一样，但是 3.5版本 addressed this issue[bug 444931] and no longer sends a request.
+                    Opera 不进行任何操作。这个行为为何是不好的？
+                        
+                    发送大量突然的请求将使你的服务器宕机（Cripple your servers），尤其是每天有数百万访问量的页面。
+                        
+                    产生一个从未浏览过的页面将浪费服务器的计算周期（computing cycles）
+                        
+                    损坏用户数据。如果你在请求中追踪状态（以cookie或是其他的方式），你可能会损坏数据。即使这个图像请求并没有返回一个图像，所有的头被浏览器读取并接受，包括所有cookie。While the rest of the response is thrown away, the damage may already be done.
+                        
+                    引起这种行为的根源在于浏览器中URI的解析方式。这种行为定义在RFC 3986 - Uniform Resource Identifiers.当一个空串作为一个URI时，它被认为一个相对URI（relative URI）并通过定义在section 5.2中的算法被解析。这个特例，一个空串，列在section 5.4当中。Firefox, Safari, and Chrome都是依据这一规格来解析空串，而Internet Explorer则不正确的解析这个串，符合更早的一个规范，RFC 2396 - Uniform Resource Identifiers (this was obsoleted by RFC 3986).所以技术上，浏览器都在做它们被期望所做的事情来解析relative URIs，问题是在这个范围，空串不是故意造成的。
+                </p>
+            </div>
+            <div class="article-mark">
+                <span class="mark-img"></span>
+                <span class="mark-category">html</span>
+                <span class="mark-category">css</span>
+                <span class="mark-category">javascript</span>
+                <p class="mark-tool"><span class="tool-comment" title="评论"></span><span class="tool-praise" title="点赞"></span></p>
+            </div>
+            <div class="article-info">
+                <span>发布时间：2019-9-26</span>
+                <a href="#">原创</a>
+                <span>作者：Cuteypl</span>
+                <span>友情提示：转载请保留原文链接及作者</span>
+            </div>
+            <div class="article-comment"></div>
+        </article>
+        <div class="page-footer">
+            <div class="footer-left">&copy;2019&nbsp;Cuteypl</div>
+            <div class="footer-right">本站总访问量：<span class="vistor-totalcount">5505</span>，本页阅读量：<span class="vistor-pagecount">5505</span></div>
+        </div>
+    </div>
+</body>
+</html>

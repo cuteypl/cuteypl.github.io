@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cuteyplblogs</title>
+    <link rel="icon" href="images/icon.ico" size='48*48'>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-col">
+            <div class="overlay"></div>
+            <header class="header">
+                <a class="header-avatar" href="#"><img class="header-avatarImg" src="./images/avatar.jpg"/><i class="header-loveImg"></i></a>
+                <hgroup class="header-title">
+                    <h1><a class="header-username" href="#" title="hi">Cuteypl</a></h1>
+                    <h3><a class="header-usermark" href="javascript:;">--路漫漫其修远兮--</a></h3>
+                </hgroup>
+                <div class="header-bottom">
+                    <p class="header-btn" id="header-btn"><span class="header-line"></span><span class="header-line"></span><span class="header-line"></span></p>
+                    <ul class="header-tips" id="header-tips"><li class="header-tipsLi">菜单</li><li class="header-tipsLi">分类</li><li class="header-tipsLi">关于我</li></ul>
+                </div>
+                <div class="header-switch" id="header-switch">
+                    <ul class="header-menu" id="header-menu">
+                        <li class="header-menuLi">博客主页</li>
+                        <li class="header-menuLi">我的作品</li>
+                        <li class="header-menuLi">生活语录</li>
+                        <li class="header-menuLi">个人简历</li>
+                        <li class="header-menuLi">-GitHub-</li>
+                    </ul>
+                    <ul class="header-catory" id="header-catory">
+                       <!-- 动态生成文章分类标签列表 -->
+                    </ul>
+                    <ul class="header-about">
+                        <li class="header-aboutLi">一个水瓶座的女孩，带着满瓶天马行空的想法！</li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+        <div class="mid-col">
+            <div class="mid-inner">
+                <div class="artOrPro-list" id="artOrPro-list">
+                   <!-- 动态生成文章标题列表 -->
+                </div>             
+            </div>
+            <nav class="mid-pagenation" id="mid-pagenation">
+            <!-- 动态生成分页器  -->
+            </nav>
+            <div class="mid-tool">
+                <button type="button" class="arrow-up" id="arrow-up"></button>
+                <button type="button" class="arrow-down" id="arrow-down"></button>
+            </div>
+            <div class="mid-footer">
+                <div class="footer-left">&copy;2019&nbsp;Cuteypl</div>
+                <!-- <div class="footer-right">本站总访问量：<span class="vistor-totalcount" id="vistor-totalcount"></span>，本页阅读量：<span class="vistor-pagecount" id="vistor-pagecount"></span></div> -->
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+        </div>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/main.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</body>
+</html>

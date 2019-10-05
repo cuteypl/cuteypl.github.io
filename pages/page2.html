@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <title>ES6入门——Set和Map数据结构</title>
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body>
+        <h1 id="es6%e5%85%a5%e9%97%a8set%e5%92%8cmap%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84">ES6入门——Set和Map数据结构</h1>
+        <h2 id="set">Set</h2>
+        <h3 id="set">新的数据结构Set</h3>
+        <p>ES6提供了新的数据结构Set。类似于数组，只不过其成员值都是唯一的，没有重复的值。
+            Set本身是一个构造函数，用来生成Set数据结构。
+            Safari and Chrome 将发出对这个页面的一个请求。
+        </p>
+        <h3 id="set">Safari and Chrome</h3>
+        <p>Internet Explorer 将向这个页面所在的目录发出一个请求
+            Safari and Chrome 将发出对这个页面的一个请求。
+            Firefox 3 和更早的版本所采取的动作和Safari and Chrome一样，但是 3.5版本 addressed this issue[bug 444931] and no longer sends a request.
+            Opera 不进行任何操作。这个行为为何是不好的？
+        </p>
+        <h2 id="set">Style</h2>
+        <p>Internet Explorer 将向这个页面所在的目录发出一个请求
+            Safari and Chrome 将发出对这个页面的一个请求。
+            Firefox 3 和更早的版本所采取的动作和Safari and Chrome一样，但是 3.5版本 addressed this issue[bug 444931] and no longer sends a request.
+            Opera 不进行任何操作。这个行为为何是不好的？
+                
+            发送大量突然的请求将使你的服务器宕机（Cripple your servers），尤其是每天有数百万访问量的页面。
+                
+            产生一个从未浏览过的页面将浪费服务器的计算周期（computing cycles）
+                
+            损坏用户数据。如果你在请求中追踪状态（以cookie或是其他的方式），你可能会损坏数据。即使这个图像请求并没有返回一个图像，所有的头被浏览器读取并接受，包括所有cookie。While the rest of the response is thrown away, the damage may already be done.
+                
+            引起这种行为的根源在于浏览器中URI的解析方式。这种行为定义在RFC 3986 - Uniform Resource Identifiers.当一个空串作为一个URI时，它被认为一个相对URI（relative URI）并通过定义在section 5.2中的算法被解析。这个特例，一个空串，列在section 5.4当中。Firefox, Safari, and Chrome都是依据这一规格来解析空串，而Internet Explorer则不正确的解析这个串，符合更早的一个规范，RFC 2396 - Uniform Resource Identifiers (this was obsoleted by RFC 3986).所以技术上，浏览器都在做它们被期望所做的事情来解析relative URIs，问题是在这个范围，空串不是故意造成的。
+        </p>
+        <h3 id="set">Style-3</h3>
+        <p>Internet Explorer 将向这个页面所在的目录发出一个请求
+            Safari and Chrome 将发出对这个页面的一个请求。
+            Firefox 3 和更早的版本所采取的动作和Safari and Chrome一样，但是 3.5版本 addressed this issue[bug 444931] and no longer sends a request.
+            Opera 不进行任何操作。这个行为为何是不好的？
+        </p>
+        <h4 id="set">将向这个页面所在的目录发出一个请求</h4>
+        <p>Internet Explorer 将向这个页面所在的目录发出一个请求
+            Safari and Chrome 将发出对这个页面的一个请求。
+            Firefox 3 和更早的版本所采取的动作和Safari and Chrome一样，但是 3.5版本 addressed this issue[bug 444931] and no longer sends a request.
+            Opera 不进行任何操作。这个行为为何是不好的？
+        </p>
+        <h4 id="set">Firefox 3 和更早的版本所采取的动作</h4>
+        <p>Internet Explorer 将向这个页面所在的目录发出一个请求
+            Safari and Chrome 将发出对这个页面的一个请求。
+            Firefox 3 和更早的版本所采取的动作和Safari and Chrome一样，但是 3.5版本 addressed this issue[bug 444931] and no longer sends a request.
+            Opera 不进行任何操作。这个行为为何是不好的？
+        </p>
+    </body>
+    </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title> <!--动态获取文章标题数据-->
+    <link rel="icon" href="images/icon.ico" size='48*48'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+    <link rel="stylesheet" href="../css/page.css">
+    <!-- 动态获取style -->
+</head>
+<body>
+    <div class="page">
+        <aside class="page-aside">
+            <div class="aside-tool">
+                <button type="button" class="home-btn" id="home-btn"><i></i></button>
+                <button type="button" class="list-btn" id="list-btn"><i></i></button>
+            </div>
+            <ul class="aside-list" id="aside-list">
+                <!-- 动态渲染文章标题列表 -->
+            </ul>
+        </aside>
+        <article class="page-article">
+            <div class="article-inner" id="article-inner">
+                <!-- 动态获取文章内容 -->
+            </div>
+            <div class="article-mark" id="article-mark">
+                <!-- 动态获取文章分类标签 -->
+                <p class="mark-tool"><span class="tool-comment" title="评论"></span><span class="tool-praise" title="点赞"></span></p>
+            </div>
+            <div class="article-info" id='article-info'>
+                <!-- 动态获取文章的基本信息 -->
+            </div>
+            <div class="article-comment"></div>
+        </article>
+        <div class="mid-tool">
+            <button type="button" class="arrow-up" id="arrow-up"></button>
+            <button type="button" class="arrow-down" id="arrow-down"></button>
+        </div>
+        <div class="page-footer">
+            <div class="footer-left">&copy;2019&nbsp;Cuteypl</div>
+            <div class="footer-right">本站总访问量：<span class="vistor-totalcount" id="vistor-totalcount">5505</span>，本页阅读量：<span class="vistor-pagecount" id="vistor-pagecount">5505</span></div>
+        </div>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/page.js"></script>
+</body>
+</html>

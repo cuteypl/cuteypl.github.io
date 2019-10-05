@@ -157,6 +157,24 @@ body{
 #gitalk-container{
     background: #ffffcc;
 }
+#gitalk-container .gt-container .gt-meta{
+    padding: 1em .5em;
+}
+#gitalk-container .gt-container .gt-header{
+    margin: 0 .8em;
+}
+#gitalk-container .gt-container .gt-header{
+    border: 2px solid #6190e8;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#gitalk-container .gt-container .gt-comments{
+    padding: 1.25em .8em;
+}
+#gitalk-container .gt-container .gt-comment-content:hover{
+    border: 1px solid rgba(104, 158, 206, 0.6);
+    border-radius: 5px;
+}
 .mid-tool{
     position: fixed;
     right: 10px;
@@ -184,11 +202,13 @@ body{
     background: url("../images/arrow-up.png") no-repeat center;
     transform: rotate(-180deg);
 }
+.page-footer{
+    margin: 46px 0 20px;
+}
 .footer-left{
     position: absolute;
     left: 0;
     width: 100px;
-    margin-top: 46px;
 }
 .footer-right{
     text-align: center;

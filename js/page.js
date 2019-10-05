@@ -1,6 +1,7 @@
 (function(){
     var postId = location.href.split('=').pop(); //pop删除数组的最后一个元素并返回被删除的元素
-    var currentpageInfoData = getcurrentpageInfoData(JSON.parse(sessionStorage.getItem('pageinfoData')).page);//获取到当前文章的基本信息
+    var pagedata = JSON.parse(sessionStorage.getItem('pageinfoData')).page;
+    var currentpageInfoData = getcurrentpageInfoData(pagedata);//获取到当前文章的基本信息
     var urlstr = 'https://cuteypl.github.io/pages/page$postId.html'.replace('$postId',postId);
     var currentpageHtmlData = getcurrentpageHtmlData('https://cuteypl.github.io/pages/page2.html');//获取到相对于文章的html
 
@@ -109,7 +110,7 @@
     /* 点赞 */
     function addpraise(e){
         if(!e.target.style.background){
-            e.target.style.background = 'url("../images/love1.png")';
+            e.target.style.background = 'url("../images/love1.png") no-repeat center';
         }
         else{
             e.target.style.background = '';

@@ -9,11 +9,11 @@
     document.getElementById('article-inner').innerHTML = currentpageHtmlData.bodystr;//渲染文章内容
     document.getElementById('article-mark').innerHTML = renderPageMark() + document.getElementById('article-mark').innerHTML;//渲染文章分类标签
     document.getElementById('article-info').innerHTML = renderPageInfo();//渲染文章发布时间和作者等信息
-    // document.getElementById('vistor-pagecount').innerHTML = getcurrentpageInfoData(JSON.parse(sessionStorage.getItem('pageinfoData')).viewwebsitcount);//渲染网站的总访问量
     document.getElementById('aside-list').innerHTML = renderPageTitleList();//渲染文章的目录
     document.getElementById('list-btn').addEventListener('click',function(){toshowOrhiddenList(document.getElementById('aside-list'))});//控制文章目录显示隐藏按钮
-    document.getElementById('arrow-up').addEventListener('click',toTop);
-    document.getElementById('arrow-down').addEventListener('click',toBottom);
+    document.getElementById('arrow-up').addEventListener('click',toTop);//返回顶部
+    document.getElementById('arrow-down').addEventListener('click',toBottom);//返回底部
+    document.getElementById('home-btn').addEventListener('click',function(){location.href='https://cuteypl.github.io'});//返回首页
 
     /* 返回当前id文章基本信息数据 */
     function getcurrentpageInfoData(datas){
@@ -70,16 +70,6 @@
                     <span>友情提示：转载请保留原文链接及作者</span>`;
         return str;
     }
-    /* 获取本站的总访问量 */
-    function getcurrentwebsiteViewCount(){
-        // var currentwebsiteViewCount = 
-        
-    }
-    /* 获取并设置显示本页的阅读量 */
-    function getcurrentpageViewCount(){
-        // var currentpageViewCount = 
-        
-    }
     /* 显示或隐藏标题列表 */
     function toshowOrhiddenList(ele){
         if(ele.style.display === 'none'){//为none时，显示
@@ -109,11 +99,9 @@
     /* 返回顶部 */
     function toTop(){
         scrollTo(0,0);
-        // console.log(innerHeight,innerWidth,screenLeft,screenTop);
     }
     /* 返回底部 */
     function toBottom(){
         scrollTo(0,document.body.clientHeight);
-        // console.log(pageXOffset,pageYOffset,outerWidth,outerHeight,document.body.clientHeight);
     }
 })();

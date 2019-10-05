@@ -1,7 +1,5 @@
 {
     "category":["HTML","CSS","JS","VUE","Linux","Python"],
-    "viewwebsitcount":0,
-    "viewpagecount":0,
     "page":[{
         "year":2019,
         "data":[{
@@ -11,7 +9,6 @@
                 "mark":["HTML","CSS","JS","VUE"],
                 "date":"2019-9-29",
                 "title":"VUEJS学习之上篇",
-                "viewcount":0,
                 "praisecount":0,
                 "url":"https://cuteypl.github.io/page.html?id=17"
             },{
@@ -21,7 +18,6 @@
                 "mark":["HTML","CSS","JS","VUE"],
                 "date":"2019-9-29",
                 "title":"VUEJS学习之上篇",
-                "viewcount":0,
                 "praisecount":0,
                 "url":"http://127.0.0.1:8080/page.html?id=16",
                 "url1":"https://class.imooc.com/?mc_marking=4e0b0537f151197140fed11920097988&mc_channel=bdqdrmjt"
@@ -32,7 +28,6 @@
                 "mark":["git"],
                 "date":"2019-9-29",
                 "title":"git的学习",
-                "viewcount":0,
                 "praisecount":0,
                 "url":"http://127.0.0.1:8080/pages/pages2.html",
                 "url1":"https://class.imooc.com/?mc_marking=4e0b0537f151197140fed11920097988&mc_channel=bdqdrmjt"
@@ -43,7 +38,6 @@
                 "mark":["Linux"],
                 "date":"2019-9-29",
                 "title":"linux指令学习",
-                "viewcount":0,
                 "praisecount":0,
                 "url":"file:///D:/MyProject/GitHubLocal/myblogs/pages/pages1.html",
                 "url1":"https://class.imooc.com/?mc_marking=4e0b0537f151197140fed11920097988&mc_channel=bdqdrmjt"

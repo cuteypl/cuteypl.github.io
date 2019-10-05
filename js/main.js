@@ -22,8 +22,6 @@
     initCategoryNameList(headerCatory,pageinfoData);//初始化文章分类菜单
     initPageOrProductList(artOrProList,pageinfoData.page,1,persize);//初始化首页的文章列表
     initpagenation(midPagenation,getDataLenth(pageinfoData,1),persize);//初始化分页器列表
-    // getAndsetWebsitViewCount();//获取并设置显示网站访问量
-    // getAndsetPageViewCount(type);//获取并设置显示本页访问量
     sessionStorage.setItem('pageinfoData',JSON.stringify(pageinfoData));//JSON.stringify(pageinfoData)
 
     headerBtn.addEventListener('click',function(e){toggleClass(headerTips,'block')});
@@ -220,7 +218,7 @@
         var index = e.target.index;
         if(index===0){//博客首页
             if(type===2){//防止在当前主页时重复点击主页重复加,当前页由作品页要切换为主页时，才重新获取并设置显示本页阅读数，否则就不再改变本页阅读数
-                getAndsetPageViewCount(type);//获取并设置显示本页阅读数
+                // getAndsetPageViewCount(type);//获取并设置显示本页阅读数
             }
             type=1;//更改 标志 当前页为博客主页,全局变量
             initPageOrProductList(artOrProList,pageinfoData.page,1,persize);//初始化首页的文章列表
@@ -229,7 +227,7 @@
         else if(index===1){//我的作品
             //1、获取作品的数据；2、初始化作品的文章列表；3、初始化分页器
             if(type===1){//防止在当前作品时重复点击主页重复加，当前页由主页要切换为作品页时，才重新获取并设置显示本页阅读数，否则就不再改变本页阅读数
-                getAndsetPageViewCount(type);//获取并设置显示本页阅读数
+                // getAndsetPageViewCount(type);//获取并设置显示本页阅读数
             }
             type=2;//更改 标志 当前页为我的作品,全局变量
             productData = getPageOrProductInfoData('../json/product.json');//,全局变量
@@ -281,41 +279,41 @@
         // console.log(pageXOffset,pageYOffset,outerWidth,outerHeight,document.body.clientHeight);
     }
     /* 获取并设置显示本网站的访问量 */
-    function getAndsetWebsitViewCount(){
-        var userId = sessionStorage.getItem('id');
-        if(!userId){//若每页获取到userId,则设置sessinon,并简单的将访问量加1
-            sessionStorage.setItem('id',Math.floor((Math.random()*999)+1));
-            sessionStorage.setItem('viewwebsitecount',pageinfoData.viewwebsitcount+1);
-        }
-        var viewwebsitcount = sessionStorage.getItem('viewwebsitecount');
-        var vistorTotalcount = document.getElementById('vistor-totalcount');
-        vistorTotalcount.innerHTML = viewwebsitcount;
-    }
+    // function getAndsetWebsitViewCount(){
+    //     var userId = sessionStorage.getItem('id');
+    //     if(!userId){//若每页获取到userId,则设置sessinon,并简单的将访问量加1
+    //         sessionStorage.setItem('id',Math.floor((Math.random()*999)+1));
+    //         sessionStorage.setItem('viewwebsitecount',pageinfoData.viewwebsitcount+1);
+    //     }
+    //     var viewwebsitcount = sessionStorage.getItem('viewwebsitecount');
+    //     var vistorTotalcount = document.getElementById('vistor-totalcount');
+    //     vistorTotalcount.innerHTML = viewwebsitcount;
+    // }
     /* 获取并设置本页的阅读量 */
-    function getAndsetPageViewCount(type){
-        var count = 0;
-        var vistorPagecount = document.getElementById('vistor-pagecount');
-        if(type===2){//我的作品
-            var viewproductcount = sessionStorage.getItem('viewproductcount');
-            count = productData.viewproductcount;
-            if(!viewproductcount){//如果viewproductcount不存在session中
-                sessionStorage.setItem('viewproductcount',count+1);
-            }
-            else{//更新session
-                sessionStorage.setItem('viewproductcount',parseInt(viewproductcount)+1);
-            }
-            vistorPagecount.innerHTML = sessionStorage.getItem('viewproductcount');
-        }
-        else{//博客主页 和 分类情况下
-            var viewpagecount = sessionStorage.getItem('viewpagecount');
-            count = pageinfoData.viewpagecount;
-            if(!viewpagecount){//如果viewpagecount不存在session中
-                sessionStorage.setItem('viewpagecount',count+1);
-            }
-            else{//更新session
-                sessionStorage.setItem('viewpagecount',parseInt(viewpagecount)+1);
-            }
-            vistorPagecount.innerHTML = sessionStorage.getItem('viewpagecount');
-        }
-    }
+    // function getAndsetPageViewCount(type){
+    //     var count = 0;
+    //     var vistorPagecount = document.getElementById('vistor-pagecount');
+    //     if(type===2){//我的作品
+    //         var viewproductcount = sessionStorage.getItem('viewproductcount');
+    //         count = productData.viewproductcount;
+    //         if(!viewproductcount){//如果viewproductcount不存在session中
+    //             sessionStorage.setItem('viewproductcount',count+1);
+    //         }
+    //         else{//更新session
+    //             sessionStorage.setItem('viewproductcount',parseInt(viewproductcount)+1);
+    //         }
+    //         vistorPagecount.innerHTML = sessionStorage.getItem('viewproductcount');
+    //     }
+    //     else{//博客主页 和 分类情况下
+    //         var viewpagecount = sessionStorage.getItem('viewpagecount');
+    //         count = pageinfoData.viewpagecount;
+    //         if(!viewpagecount){//如果viewpagecount不存在session中
+    //             sessionStorage.setItem('viewpagecount',count+1);
+    //         }
+    //         else{//更新session
+    //             sessionStorage.setItem('viewpagecount',parseInt(viewpagecount)+1);
+    //         }
+    //         vistorPagecount.innerHTML = sessionStorage.getItem('viewpagecount');
+    //     }
+    // }
 })();

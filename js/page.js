@@ -14,6 +14,8 @@
     document.getElementById('arrow-up').addEventListener('click',toTop);//返回顶部
     document.getElementById('arrow-down').addEventListener('click',toBottom);//返回底部
     document.getElementById('home-btn').addEventListener('click',function(){location.href='https://cuteypl.github.io'});//返回首页
+    document.getElementById('tool-comment').addEventListener('click',function(){toshowOrhiddenList(document.getElementById('gitalk-container'))});//点击显示隐藏评论
+    document.getElementById('tool-praise'.addEventListener('click',function(e){addpraise(e)}));//点赞
 
     /* 返回当前id文章基本信息数据 */
     function getcurrentpageInfoData(datas){
@@ -92,7 +94,7 @@
         }
         hEleArr.shift();
         for(var i=0,len=hEleArr.length; i<len; i++){
-            str += `<li class="list-item">`+ hEleArr[i].innerHTML +`</li>`;
+            str += `<a href="`+hEleArr[i].id+`" class="list-item">`+ hEleArr[i].innerHTML +`</a>`;
         }
         return str;
     }
@@ -103,5 +105,14 @@
     /* 返回底部 */
     function toBottom(){
         scrollTo(0,document.body.clientHeight);
+    }
+    /* 点赞 */
+    function addpraise(e){
+        if(!e.target.style.background){
+            e.target.style.background = 'url("../images/love1.png")';
+        }
+        else{
+            e.target.style.background = '';
+        }
     }
 })();

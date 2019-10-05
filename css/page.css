@@ -154,6 +154,9 @@ body{
 .article-info > a{
     color: #999;
 }
+#gitalk-container{
+    background: #ffffcc;
+}
 .mid-tool{
     position: fixed;
     right: 10px;
@@ -185,6 +188,7 @@ body{
     position: absolute;
     left: 0;
     width: 100px;
+    margin-top: 46px;
 }
 .footer-right{
     text-align: center;

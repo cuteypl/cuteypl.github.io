@@ -1,8 +1,8 @@
 (function(){
     var postId = location.href.split('=').pop(); //pop删除数组的最后一个元素并返回被删除的元素
     var currentpageInfoData = getcurrentpageInfoData(JSON.parse(sessionStorage.getItem('pageinfoData')).page);//获取到当前文章的基本信息
-    var urlstr = 'https://cuteypl.github.io/page$postId.html'.replace('$postId',postId);
-    var currentpageHtmlData = getcurrentpageHtmlData(location.href);//获取到相对于文章的html
+    var urlstr = 'https://cuteypl.github.io/pages/page$postId.html'.replace('$postId',postId);
+    var currentpageHtmlData = getcurrentpageHtmlData(urlstr);//获取到相对于文章的html
 
     document.title = currentpageInfoData.title;//渲染文章的标题
     document.head.innerHTML += currentpageHtmlData.stylestr;//渲染文档的style样式
@@ -10,8 +10,8 @@
     document.getElementById('article-mark').innerHTML = renderPageMark() + document.getElementById('article-mark').innerHTML;//渲染文章分类标签
     document.getElementById('article-info').innerHTML = renderPageInfo();//渲染文章发布时间和作者等信息
     // document.getElementById('vistor-pagecount').innerHTML = getcurrentpageInfoData(JSON.parse(sessionStorage.getItem('pageinfoData')).viewwebsitcount);//渲染网站的总访问量
-    document.getElementById('aside-list').innerHTML = renderPageTitleList();
-    document.getElementById('list-btn').addEventListener('click',function(){toshowOrhiddenList(document.getElementById('aside-list'))});
+    document.getElementById('aside-list').innerHTML = renderPageTitleList();//渲染文章的目录
+    document.getElementById('list-btn').addEventListener('click',function(){toshowOrhiddenList(document.getElementById('aside-list'))});//控制文章目录显示隐藏按钮
     document.getElementById('arrow-up').addEventListener('click',toTop);
     document.getElementById('arrow-down').addEventListener('click',toBottom);
 

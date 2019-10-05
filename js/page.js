@@ -1,9 +1,10 @@
 (function(){
     var postId = location.href.split('=').pop(); //pop删除数组的最后一个元素并返回被删除的元素
-    var pagedata = JSON.parse(sessionStorage.getItem('pageinfoData')).page;
-    var currentpageInfoData = getcurrentpageInfoData(pagedata);//获取到当前文章的基本信息
+    // var pagedata = JSON.parse(sessionStorage.getItem('pageinfoData')).page;
+    var pageinfoData = getPageOrProductInfoData('../json/pageinfo.json');//获取文章信息
+    var currentpageInfoData = getcurrentpageInfoData(pageinfoData.page);//获取到当前文章的基本信息
     var urlstr = 'https://cuteypl.github.io/pages/page$postId.html'.replace('$postId',postId);
-    var currentpageHtmlData = getcurrentpageHtmlData('https://cuteypl.github.io/pages/page2.html');//获取到相对于文章的html
+    var currentpageHtmlData = getcurrentpageHtmlData(urlstr);//获取到相对于文章的html
 
     document.title = currentpageInfoData.title;//渲染文章的标题
     document.head.innerHTML += currentpageHtmlData.stylestr;//渲染文档的style样式
@@ -18,6 +19,20 @@
     document.getElementById('tool-comment').addEventListener('click',function(e){toshowOrhiddenList(document.getElementById('gitalk-container'));switchBgImg(e,'url("../images/comment1.png")')});//点击显示隐藏评论
     document.getElementById('tool-praise').addEventListener('click',function(e){switchBgImg(e,'url("../images/love1.png")')});//点赞
 
+    /* 获取文章的基本信息数据 */
+    function getPageOrProductInfoData(urlstr){
+        var pageOrproductData = null;
+        $.ajax({
+            type:'GET',
+            url: urlstr, 
+            async: false, //true---异步 false---同步,此处要为同步加载数据，否则list没有数据
+            success: function(data){
+                pageOrproductData = data || [];
+            }
+        });
+        console.log(pageOrproductData);
+        return pageOrproductData;
+    }
     /* 返回当前id文章基本信息数据 */
     function getcurrentpageInfoData(datas){
         console.log(datas);
@@ -31,7 +46,7 @@
             
         }
     }
-    /* 从pages获取当前文章的 */
+    /* 从pages获取当前文章的htmlstr */
     function getcurrentpageHtmlData(urlstr){
         var currentpageHtmlData = null;
         $.ajax({

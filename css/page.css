@@ -179,7 +179,8 @@ body{
 }
 #gitalk-container .gt-container .gt-comment-content:hover{
     box-shadow: none;
-    opacity: 0.3;
+    background: rgba(0,0,0,.1);
+    border-radius: 5px;
 }
 .mid-tool{
     position: fixed;

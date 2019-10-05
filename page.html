@@ -55,13 +55,14 @@
     <script async src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
     <script>
         const gitalk = new Gitalk({
-        clientID: 'GitHub Application Client ID',
-        clientSecret: 'GitHub Application Client Secret',
-        repo: 'GitHub repo',
-        owner: 'GitHub repo owner',
-        admin: ['GitHub repo owner and collaborators, only these guys can initialize github issues'],
-        id: location.pathname,      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
+            clientID: 'ee0ea3761fa7339422b3',
+            clientSecret: 'e4f01ab0cba442b2c27d71fcb88f2b38fb6695c8',
+            repo: 'cuteypl.github.io', //仓库名字
+            owner: 'cuteypl', //仓库拥有者
+            admin: ['cuteypl'], //仓库管理者
+            id: location.pathname,      // 哪篇文章的评论
+            distractionFreeMode: false,  // 是否评论时开启遮罩
+            enableHotKey: true //启用快捷键[cmd/ctrl + enter]提交评论
         })
         gitalk.render('gitalk-container')
     </script>

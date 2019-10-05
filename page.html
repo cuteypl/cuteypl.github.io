@@ -52,7 +52,7 @@
     <script src="js/zepto.min.js"></script>
     <script src="js/page.js"></script>
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <script async src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
     <script>
         const gitalk = new Gitalk({
             clientID: 'ee0ea3761fa7339422b3',
@@ -63,8 +63,8 @@
             id: location.pathname,      // 哪篇文章的评论
             distractionFreeMode: false,  // 是否评论时开启遮罩
             enableHotKey: true //启用快捷键[cmd/ctrl + enter]提交评论
-        })
-        gitalk.render('gitalk-container')
+        });
+        gitalk.render('gitalk-container');
     </script>
 </body>
 </html>

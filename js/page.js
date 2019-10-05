@@ -15,7 +15,7 @@
     document.getElementById('arrow-down').addEventListener('click',toBottom);//返回底部
     document.getElementById('home-btn').addEventListener('click',function(){location.href='https://cuteypl.github.io'});//返回首页
     document.getElementById('tool-comment').addEventListener('click',function(){toshowOrhiddenList(document.getElementById('gitalk-container'))});//点击显示隐藏评论
-    document.getElementById('tool-praise').addEventListener('click',function(e){addpraise(e)}));//点赞
+    document.getElementById('tool-praise').addEventListener('click',function(e){addpraise(e)});//点赞
 
     /* 返回当前id文章基本信息数据 */
     function getcurrentpageInfoData(datas){

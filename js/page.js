@@ -9,7 +9,7 @@
     document.getElementById('article-inner').innerHTML = currentpageHtmlData.bodystr;//渲染文章内容
     document.getElementById('article-mark').innerHTML = renderPageMark() + document.getElementById('article-mark').innerHTML;//渲染文章分类标签
     document.getElementById('article-info').innerHTML = renderPageInfo();//渲染文章发布时间和作者等信息
-    document.getElementById('vistor-pagecount').innerHTML = getcurrentpageInfoData(JSON.parse(sessionStorage.getItem('pageinfoData')).viewwebsitcount);//渲染网站的总访问量
+    // document.getElementById('vistor-pagecount').innerHTML = getcurrentpageInfoData(JSON.parse(sessionStorage.getItem('pageinfoData')).viewwebsitcount);//渲染网站的总访问量
     document.getElementById('aside-list').innerHTML = renderPageTitleList();
     document.getElementById('list-btn').addEventListener('click',function(){toshowOrhiddenList(document.getElementById('aside-list'))});
     document.getElementById('arrow-up').addEventListener('click',toTop);

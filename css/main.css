@@ -71,6 +71,28 @@ a{
     display: block !important;
 }
 
+/* 适配 */
+/*sm*/
+/* @media (min-width: 576px) {
+    .container {
+        width: 540px;
+    }
+} */
+/*md*/
+/* @media (min-width: 768px) {
+    .container {
+        width: 720px;
+    }
+} */ 
+/* lg */
+
+/*xl*/
+/* @media (min-width: 1200px) {
+    .container {
+        width: 1140px;
+    }
+} */
+
 /* content css */
 html,body{
     width: 100%;
@@ -87,16 +109,22 @@ html,body{
 .left-col{
     position: fixed;
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 300px;
     height: 100%;
+    justify-content: center;
+    align-items: center;
     background: url('./../images/bg7.jpg') no-repeat center/cover;
     background-color: rgba(0, 0, 0, 0.8);
-    background-color: #515;
     overflow: hidden;
     color: #fff;
     font-size: 14px;
+}
+@media (max-width: 992px) {
+    .left-col{
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
 }
 .overlay{
     position: absolute;
@@ -218,6 +246,24 @@ html,body{
     text-align: center;
     line-height: 2;
 }
+@media (max-width: 992px) {
+    .header{
+        border-bottom: none;
+    }
+    .header-bottom{
+        position: absolute;
+        top: 160px;
+        left: 0;
+
+    }
+    .header-tips{
+        width: 150px;
+    }
+    .header-menuLi,.header-catoryLi,.header-aboutLi{
+        display: inline-block;
+        margin: 0 5px;
+    }
+}
 .header-menuLi:hover,.header-catoryLi:hover,.header-aboutLi:hover{
     background: #258fb8; /*rgba(0, 0, 255, 0.3)*/
     cursor: pointer;
@@ -260,6 +306,15 @@ html,body{
 .list-wrap{
     flex: 1;
     margin: 20px;
+}
+@media (max-width: 992px) {
+    .mid-col{
+        padding: 15px;
+        margin-left: 0;
+    }
+    .artOrPro-inner{
+        display: block;
+    }
 }
 .time-date{
     padding: 0 10px 0 0;
@@ -374,71 +429,3 @@ html,body{
     75%{opacity: .3;transform: scale(3);}
     100%{opacity: 0;transform: scale(0);}
 }
-
-/*分类标签的样式*/
-/*.artOrPro-list > .my-mark{
-    position: relative;
-    padding: 0 5px 0 20px;
-    background: #39b3d7;
-}
-.artOrPro-list > .my-mark::before{
-    position: absolute;
-    display: block;
-    content: "";
-    width: 8px;
-    height: 8px;
-    top: 0;
-    bottom: 0;
-    left: 5px;
-    margin: auto;
-    border-radius: 50%;
-    background: yellow;
-}
-.artOrPro-list > .my-mark::after{
-    position: absolute;
-    display: block;
-    content: "";
-    top: 0;
-    left: 100%;
-    border: 11px solid transparent;
-    border-left-color: #39b3d7;
-}*/
-/*第一版的展示样式*/
-/* .article{
-    padding: 0 30px;
-    margin: 15px;
-    box-shadow: 0 0 6px 1px rgba(0,0,0,0.46); 
-    box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
-}
-.title{
-    padding: 15px 0;
-    border-bottom: 2px solid #2f2f2f;
-}
-.title a{
-    font-size: 24px;
-    color: #999;
-}
-.title time{
-    float: right;
-}
-.summary{
-    min-height: 160px;
-    padding: 15px 0;
-    line-height: 1.5;
-    border-bottom: 2px solid #2f2f2f;
-}
-.category{
-    padding: 10px 0 15px;
-    font-size: 13px;
-}
-.morebtn{
-    float: right;
-    padding: 5px;
-    background: #258fb8;
-    cursor: pointer;
-    color: #fff;
-}
-.title a:hover, .morebtn:hover{
-    background: #3f3f3f;
-    color: #fff;
-} */

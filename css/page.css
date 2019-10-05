@@ -55,7 +55,7 @@ body{
     padding: 10px;
     background: rgba(0, 0, 0, .5);
     list-style: none;
-    /* list-style: disc inside; */
+    list-style: disc inside;
     box-sizing: border-box;
     color: #fff;
     line-height: 1.8;
@@ -81,6 +81,30 @@ body{
 .page-article{
     padding: 30px;
     background: #ffffcc;
+}
+@media (max-width: 992px){
+    html,body{
+        padding: 0;
+    }
+    .aside-tool{
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    .home-btn, .list-btn{
+        position: relative;
+    }
+    .list-btn{
+        top: 0;
+        left: 0;
+    }
+    .aside-list{
+        top: 50px;
+        left: 0;
+    }
+    .page-article{
+        padding: 30px 20px;
+    }
 }
 .article-mark{
     display: flex;

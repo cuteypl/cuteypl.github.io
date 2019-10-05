@@ -1,8 +1,8 @@
 (function(){
     var postId = location.href.split('=').pop(); //pop删除数组的最后一个元素并返回被删除的元素
     var currentpageInfoData = getcurrentpageInfoData(JSON.parse(sessionStorage.getItem('pageinfoData')).page);//获取到当前文章的基本信息
-    var urlstr = 'http://127.0.0.1:8080/pages/page$postId.html'.replace('$postId',postId);
-    var currentpageHtmlData = getcurrentpageHtmlData('http://127.0.0.1:8080/pages/page2.html');//获取到相对于文章的html
+    var urlstr = 'https://cuteypl.github.io/page$postId.html'.replace('$postId',postId);
+    var currentpageHtmlData = getcurrentpageHtmlData('https://cuteypl.github.io/pages/page2.html');//获取到相对于文章的html
 
     document.title = currentpageInfoData.title;//渲染文章的标题
     document.head.innerHTML += currentpageHtmlData.stylestr;//渲染文档的style样式

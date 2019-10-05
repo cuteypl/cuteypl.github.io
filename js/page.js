@@ -94,7 +94,7 @@
         }
         hEleArr.shift();
         for(var i=0,len=hEleArr.length; i<len; i++){
-            str += `<li class="list-item"><a href="`+hEleArr[i].id+`">`+ hEleArr[i].innerHTML +`</a></li>`;
+            str += `<li class="list-item"><a href="#`+hEleArr[i].id+`">`+ hEleArr[i].innerHTML +`</a></li>`;
         }
         return str;
     }

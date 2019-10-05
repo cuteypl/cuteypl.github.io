@@ -15,8 +15,8 @@
     document.getElementById('arrow-up').addEventListener('click',toTop);//返回顶部
     document.getElementById('arrow-down').addEventListener('click',toBottom);//返回底部
     document.getElementById('home-btn').addEventListener('click',function(){location.href='https://cuteypl.github.io'});//返回首页
-    document.getElementById('tool-comment').addEventListener('click',function(){toshowOrhiddenList(document.getElementById('gitalk-container'))});//点击显示隐藏评论
-    document.getElementById('tool-praise').addEventListener('click',function(e){addpraise(e)});//点赞
+    document.getElementById('tool-comment').addEventListener('click',function(e){toshowOrhiddenList(document.getElementById('gitalk-container'));switchBgImg(e,'url("../images/comment1.png")')});//点击显示隐藏评论
+    document.getElementById('tool-praise').addEventListener('click',function(e){switchBgImg(e,'url("../images/love1.png")')});//点赞
 
     /* 返回当前id文章基本信息数据 */
     function getcurrentpageInfoData(datas){
@@ -109,9 +109,9 @@
         scrollTo(0,document.body.clientHeight);
     }
     /* 点赞 */
-    function addpraise(e){
+    function switchBgImg(e,urlstr){
         if(!e.target.style.background){
-            e.target.style.background = 'url("../images/love1.png") no-repeat center';
+            e.target.style.background = urlstr + 'no-repeat center/20px 20px';
         }
         else{
             e.target.style.background = '';

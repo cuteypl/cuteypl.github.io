@@ -163,7 +163,7 @@ body{
 #gitalk-container .gt-container .gt-header{
     margin: 0 .8em;
 }
-#gitalk-container .gt-container .gt-header .gt-avatar{
+#gitalk-container .gt-container .gt-avatar{
     border: 2px solid #6190e8;
     border-radius: 50%;
     overflow: hidden;
@@ -172,9 +172,8 @@ body{
     padding: 1.25em .8em;
 }
 #gitalk-container .gt-container .gt-comment-content:hover{
-    border: 1px solid rgba(104, 158, 206, 0.6);
-    border-radius: 5px;
     box-shadow: none;
+    opacity: 0.3;
 }
 .mid-tool{
     position: fixed;

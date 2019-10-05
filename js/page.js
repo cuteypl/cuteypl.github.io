@@ -20,6 +20,7 @@
 
     /* 返回当前id文章基本信息数据 */
     function getcurrentpageInfoData(datas){
+        console.log(datas);
         for(var i=0,len=datas.length; i<len; i++){
             var dataArr = datas[i].data;
             for(var j=0,len=dataArr.length; j<len; j++){

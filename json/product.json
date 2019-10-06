@@ -10,7 +10,7 @@
                 "mark":["HTML","CSS3"],
                 "date":"2019-10-06",
                 "title":"使用HTML/CSS(3)实现的商品列表",
-                "url":"./products/business/index.html"
+                "url":"./products/css3-business/index.html"
             },{
                 "id":"1",
                 "author":"cuteypl",
@@ -18,7 +18,7 @@
                 "mark":["HTML","CSS3"],
                 "date":"2019-10-06",
                 "title":"纯CSS3绘制的小猫笑脸动画",
-                "url":"http://htmlpreview.github.io/?https://github.com/cuteypl/cuteypl.github.io/blob/master/prducts/css3-cat-face/index.html",
+                "url":"./products/css3-catFace/index.html",
                 "url1":"https://www.html5tricks.com/css3-pretty-cat-face.html"
             }]}
     ]

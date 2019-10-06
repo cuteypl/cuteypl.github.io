@@ -71,28 +71,6 @@ a{
     display: block !important;
 }
 
-/* 适配 */
-/*sm*/
-/* @media (min-width: 576px) {
-    .container {
-        width: 540px;
-    }
-} */
-/*md*/
-/* @media (min-width: 768px) {
-    .container {
-        width: 720px;
-    }
-} */ 
-/* lg */
-
-/*xl*/
-/* @media (min-width: 1200px) {
-    .container {
-        width: 1140px;
-    }
-} */
-
 /* content css */
 html,body{
     width: 100%;

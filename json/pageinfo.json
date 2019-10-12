@@ -32,52 +32,6 @@
                 "viewcount":0,
                 "praisecount":0,
                 "url":"./pages/page1.html"
-            }]}//,{
-            // "year":2018,
-            // "data":[{
-            //     "id":"4",
-            //     "author":"cuteypl",
-            //     "copyright":"转载",
-            //     "mark":["HTML","CSS","JS","VUE"],
-            //     "date":"2018-9-29",
-            //     "title":"VUEJS学习之上篇",
-            //     "viewcount":0,
-            //     "praisecount":0,
-            //     "url":"file:///D:/MyProject/GitHubLocal/myblogs/pages/pages1.html",
-            //     "url1":"https://class.imooc.com/?mc_marking=4e0b0537f151197140fed11920097988&mc_channel=bdqdrmjt"
-            // },{
-            //     "id":"3",
-            //     "author":"cuteypl",
-            //     "copyright":"转载",
-            //     "mark":["HTML","CSS","JS","VUE"],
-            //     "date":"2018-9-29",
-            //     "title":"VUEJS学习之上篇",
-            //     "viewcount":0,
-            //     "praisecount":0,
-            //     "url":"file:///D:/MyProject/GitHubLocal/myblogs/pages/pages1.html",
-            //     "url1":"https://class.imooc.com/?mc_marking=4e0b0537f151197140fed11920097988&mc_channel=bdqdrmjt"
-            // },{
-            //     "id":"2",
-            //     "author":"cuteypl",
-            //     "copyright":"转载",
-            //     "mark":["HTML","CSS","JS","VUE"],
-            //     "date":"2018-9-29",
-            //     "title":"VUEJS学习之上篇",
-            //     "viewcount":0,
-            //     "praisecount":0,
-            //     "url":"file:///D:/MyProject/GitHubLocal/myblogs/pages/pages1.html",
-            //     "url1":"https://class.imooc.com/?mc_marking=4e0b0537f151197140fed11920097988&mc_channel=bdqdrmjt"
-            // },{
-            //     "id":"1",
-            //     "author":"cuteypl",
-            //     "copyright":"转载",
-            //     "mark":["HTML","CSS","JS","VUE"],
-            //     "date":"2018-9-29",
-            //     "title":"VUEJS学习之上篇",
-            //     "viewcount":0,
-            //     "praisecount":0,
-            //     "url":"file:///D:/MyProject/GitHubLocal/myblogs/pages/pages1.html",
-            //     "url1":"https://class.imooc.com/?mc_marking=4e0b0537f151197140fed11920097988&mc_channel=bdqdrmjt"
-            // }]}
+            }]}
     ]
 }

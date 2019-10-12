@@ -4,6 +4,7 @@
     var pageinfoData = getPageOrProductInfoData('../json/pageinfo.json');//获取文章信息
     var currentpageInfoData = getcurrentpageInfoData(pageinfoData.page);//获取到当前文章的基本信息
     var urlstr = 'https://cuteypl.github.io/pages/page$postId.html'.replace('$postId',postId);
+    // var urlstr = '../pages/page$postId.html'.replace('$postId',postId);
     var currentpageHtmlData = getcurrentpageHtmlData(urlstr);//获取到相对于文章的html
 
     document.title = currentpageInfoData.title;//渲染文章的标题

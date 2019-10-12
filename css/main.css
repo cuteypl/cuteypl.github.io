@@ -296,9 +296,11 @@ html,body{
 }
 .time-date{
     padding: 0 10px 0 0;
-    float: right;
 }
 .list-wrap > li{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 15px 0;
     line-height: 1.5;
     border-bottom: 2px solid #2f2f2f;

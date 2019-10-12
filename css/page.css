@@ -48,9 +48,9 @@ body{
     background: rgba(0, 0, 0, 0.2); 
 }
 .aside-list{
-    position: absolute;
-    top: 100px;
-    left: -210px;
+    position: fixed;
+    top: 114px;
+    left: 205px;
     width: 200px;
     padding: 10px;
     background: rgba(0, 0, 0, .5);

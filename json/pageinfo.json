@@ -11,7 +11,7 @@
                 "title":"使用SVG绘制星空背景图",
                 "viewcount":0,
                 "praisecount":0,
-                "url":"./pages/page3.html"
+                "url":"./page.html?id=3"
             },{
                 "id":"2",
                 "author":"cuteypl",
@@ -21,7 +21,7 @@
                 "title":"使用@media和flex实现栅格系统",
                 "viewcount":0,
                 "praisecount":0,
-                "url":"./pages/page2.html"
+                "url":"./page.html?id=2"
             },{
                 "id":"1",
                 "author":"cuteypl",
@@ -31,7 +31,7 @@
                 "title":"使用纯CSS3实现的小猫笑脸动画",
                 "viewcount":0,
                 "praisecount":0,
-                "url":"./pages/page1.html"
+                "url":"./page.html?id=1"
             }]}
     ]
 }

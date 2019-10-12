@@ -3,7 +3,7 @@ html,body{width:100%;height:100%}body{background-color:#3f3f3f}.page{position:re
 .list-btn{top:60px;left:0}.home-btn>i,.list-btn>i{display:block;width:100%;height:100%}
 .home-btn>i{background:url("../images/home.png") no-repeat center}
 .list-btn>i{background:url("../images/shejimulu.png") no-repeat center/18px 18px}
-.home-btn:hover,.list-btn:hover{background:rgba(0,0,0,0.2)}.aside-list{position:absolute;top:100px;left:-210px;width:200px;padding:10px;background:rgba(0,0,0,.5);list-style:none;list-style:disc inside;box-sizing:border-box;color:#fff;line-height:1.8}
+.home-btn:hover,.list-btn:hover{background:rgba(0,0,0,0.2)}.aside-list{position:fixed;;top:114px;left:205px;width:200px;padding:10px;background:rgba(0,0,0,.5);list-style:none;list-style:disc inside;box-sizing:border-box;color:#fff;line-height:1.8}
 .list-item{padding:0 8px;cursor:pointer}.list-item>a{color:#fff}.list-item:hover{background:rgba(233,233,233,.2)}
 .list-item>a:hover{text-decoration:none}.next-list{padding:0;list-style:none}.page-article{padding:30px;background:#ffc}
 @media(max-width:992px){html,body{padding:0}.aside-tool{position:relative;top:0;left:0}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用SVG绘制的星空背景图</title>
+    <style>
+        html, body {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: 100%;
+          background: #001122;
+          line-height: 0;
+          font-size: 0;
+        }
+    </style>
+</head>
+<body>
+    <svg width="100%" height="100%" viewBox="-400 -300 800 600" preserveAspectRatio="xMidYMid slice">
+        <!-- 星星 -->
+        <defs>
+            <polygon id="star" points="0 -10 2 -2 10 0 2 2 0 10 -2 2 -10 0 -2 -2" fill="white"></polygon>
+        </defs>
+        <!-- 湖面上 -->
+        <g id="real">
+            <!-- 星星背景 -->
+            <g id="star-group"></g>
+            <!-- 月亮 -->
+            <g id="moon-group">
+                <circle cx="-250" cy="-150" r="35" fill="yellow" stroke="black" />
+                <circle cx="-240" cy="-155" r="35" fill="#001122"></circle>
+            </g>
+            <!-- 灯塔 -->
+            <g id="light-tower" transform="translate(250,0)">
+                <defs>
+                    <!-- 灯塔颜色 -->
+                    <linearGradient id="tower-color" x1="0" t1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="#999"></stop>
+                        <stop offset="1" stop-color="#333"></stop>
+                    </linearGradient>
+                    <!-- 灯光颜色 -->
+                    <radialGradient id="light-color" cx="0.5" cy="0.5" r="0.5">            
+                        <stop offset="0" stop-color="rgba(255,255,255,.8)"></stop>            
+                        <stop offset="1" stop-color="rgba(255,255,255,0)"></stop>         
+                    </radialGradient>   
+                    <!-- 切割灯光成三角形并进行360旋转,剪切路径 -->
+                    <clipPath id="light-clip">            
+                        <polygon points="0 0 -400 -15 -400 15" fill="rgba(255,0,0,.5)">              
+                            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"></animateTransform>        
+                        </polygon>
+                        <!-- 灯光发射点 -->
+                        <circle cx="0" cy="0" r="2"></circle>
+                    </clipPath>
+                </defs>
+                <!-- 灯塔 -->
+                <polygon points="0 0 5 50 -5 50" fill="url(#tower-color)"></polygon>
+                <!-- 灯光 -->
+                <ellipse cx="0" cy="0" rx="300" ry="100" fill="url(#light-color)" clip-path="url(#light-clip)"></ellipse>
+            </g>
+        </g>
+        <!-- 绘制反射,倒影部分 -->
+        <g id="reflact" transform="translate(0,50)" mask="url(#fading)">
+            <defs>
+              <!-- 倒影的颜色，线性渐变 -->
+              <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="rgba(255,255,255,0.3)"></stop>
+                <stop offset="0.5" stop-color="rgba(255,255,255,0)"></stop>
+              </linearGradient>
+              <mask id="fading">
+                <!-- 倒影 -->
+                <rect x="-400" y="0" width="100%" height="100%" fill="url(#fade)"></rect>
+              </mask>
+            </defs>
+            <!-- scale(1,-1)可实现上下翻转对应，可理解为所有元素的y坐标 * -1 -->
+            <use xlink:href="#real" transform="scale(1,-1) translate(0,-50)"></use>
+            <line x1="-400" y1="0" x2="400" y2="0" stroke="white"></line>
+        </g>    
+    </svg>
+    <script>
+        var SVG_NS = 'http://www.w3.org/2000/svg';
+        var XLINK_NS = 'http://www.w3.org/1999/xlink';
+        var paper = document.querySelector('svg');
+        renderStar();    
+        // 创建引用的use标签
+        function use(origin) {
+            var _use = document.createElementNS(SVG_NS, 'use');
+            _use.setAttributeNS(XLINK_NS, 'xlink:href', '#' + origin.id);
+            return _use;
+        }
+        // 产生最大值最小值之间的随机数随机数
+        function random(min, max) {
+            return min + (max - min) * Math.random();
+        }
+        function renderStar() {
+            var starRef = document.getElementById('star');
+            var starGroup = document.getElementById('star-group');
+            var starCount = 500;
+            var star;
+            while (starCount--) {
+                star = use(starRef);
+                //改变透明度，位置和大小
+                star.setAttribute('opacity', random(0.1, 0.4));
+                star.setAttribute('transform', 
+                    'translate(' + random(-400, 400) + ',' + random(-300, 300) + ')'
+                    + 'scale(' + random(0.1, 0.6) + ')');
+                starGroup.appendChild(star); //添加星星
+            }
+        }
+    </script>
+</body>
+</html>

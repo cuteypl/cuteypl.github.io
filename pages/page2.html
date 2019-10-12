@@ -2,11 +2,10 @@
     <html>
     <head>
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>栅格系统</title>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-        <title>ES6入门——Set和Map数据结构</title>
-        
         <style>
 .task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
 </style>
@@ -21,50 +20,145 @@
         
     </head>
     <body>
-        <h1 id="es6%e5%85%a5%e9%97%a8set%e5%92%8cmap%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84">ES6入门——Set和Map数据结构</h1>
-        <h2 id="set">Set</h2>
-        <h3 id="set1">新的数据结构Set</h3>
-        <p>ES6提供了新的数据结构Set。类似于数组，只不过其成员值都是唯一的，没有重复的值。
-            Set本身是一个构造函数，用来生成Set数据结构。
-            Safari and Chrome 将发出对这个页面的一个请求。
-        </p>
-        <h3 id="set2">Safari and Chrome</h3>
-        <p>Internet Explorer 将向这个页面所在的目录发出一个请求
-            Safari and Chrome 将发出对这个页面的一个请求。
-            Firefox 3 和更早的版本所采取的动作和Safari and Chrome一样，但是 3.5版本 addressed this issue[bug 444931] and no longer sends a request.
-            Opera 不进行任何操作。这个行为为何是不好的？
-        </p>
-        <h2 id="set3">Style</h2>
-        <p>Internet Explorer 将向这个页面所在的目录发出一个请求
-            Safari and Chrome 将发出对这个页面的一个请求。
-            Firefox 3 和更早的版本所采取的动作和Safari and Chrome一样，但是 3.5版本 addressed this issue[bug 444931] and no longer sends a request.
-            Opera 不进行任何操作。这个行为为何是不好的？
-                
-            发送大量突然的请求将使你的服务器宕机（Cripple your servers），尤其是每天有数百万访问量的页面。
-                
-            产生一个从未浏览过的页面将浪费服务器的计算周期（computing cycles）
-                
-            损坏用户数据。如果你在请求中追踪状态（以cookie或是其他的方式），你可能会损坏数据。即使这个图像请求并没有返回一个图像，所有的头被浏览器读取并接受，包括所有cookie。While the rest of the response is thrown away, the damage may already be done.
-                
-            引起这种行为的根源在于浏览器中URI的解析方式。这种行为定义在RFC 3986 - Uniform Resource Identifiers.当一个空串作为一个URI时，它被认为一个相对URI（relative URI）并通过定义在section 5.2中的算法被解析。这个特例，一个空串，列在section 5.4当中。Firefox, Safari, and Chrome都是依据这一规格来解析空串，而Internet Explorer则不正确的解析这个串，符合更早的一个规范，RFC 2396 - Uniform Resource Identifiers (this was obsoleted by RFC 3986).所以技术上，浏览器都在做它们被期望所做的事情来解析relative URIs，问题是在这个范围，空串不是故意造成的。
-        </p>
-        <h3 id="set4">Style-3</h3>
-        <p>Internet Explorer 将向这个页面所在的目录发出一个请求
-            Safari and Chrome 将发出对这个页面的一个请求。
-            Firefox 3 和更早的版本所采取的动作和Safari and Chrome一样，但是 3.5版本 addressed this issue[bug 444931] and no longer sends a request.
-            Opera 不进行任何操作。这个行为为何是不好的？
-        </p>
-        <h4 id="set5">将向这个页面所在的目录发出一个请求</h4>
-        <p>Internet Explorer 将向这个页面所在的目录发出一个请求
-            Safari and Chrome 将发出对这个页面的一个请求。
-            Firefox 3 和更早的版本所采取的动作和Safari and Chrome一样，但是 3.5版本 addressed this issue[bug 444931] and no longer sends a request.
-            Opera 不进行任何操作。这个行为为何是不好的？
-        </p>
-        <h4 id="set6">Firefox 3 和更早的版本所采取的动作</h4>
-        <p>Internet Explorer 将向这个页面所在的目录发出一个请求
-            Safari and Chrome 将发出对这个页面的一个请求。
-            Firefox 3 和更早的版本所采取的动作和Safari and Chrome一样，但是 3.5版本 addressed this issue[bug 444931] and no longer sends a request.
-            Opera 不进行任何操作。这个行为为何是不好的？
-        </p>
+        <h1 id="%e6%a0%85%e6%a0%bc%e7%b3%bb%e7%bb%9f">栅格系统</h1>
+<p>这是一款我自己个人实现的响应式的栅格系统，实现这个也是由于学习到CSS3的新属性@media和flex时，回想起很久前用过Bootstarp框架，Bootstarp里的栅格系统的响应式布局效果，好像可以利用这两个新属性来实现，所以就即学即用，应用这个两个属性实现了这款简便简单的栅格系统。<br>
+下面我会简单展开说下它的实现和使用。</p>
+<h2 id="1%e5%ae%9e%e7%8e%b0%e5%8e%9f%e7%90%86">1、实现原理</h2>
+<h3 id="11-%e7%9f%a5%e8%af%86%e7%82%b9">1.1 知识点</h3>
+<pre><code>media、flex
+</code></pre>
+<ul>
+<li>@media：媒体查询，利用它可以为不同类型的设备和不同宽高的设备应用不同的样式，来达到适配的效果。</li>
+<li>flex：弹性布局，利用它可以实现根据页面的现可视宽高来实现响应式的布局，它会自动对flex容器内的子元素进行伸缩、换行等重新排列布局，以自适应页面，达到更好的展示。<br>
+想要更深入的了解@media和flex，<a href="https://www.runoob.com/w3cnote/flex-grammar.html">传送门</a>。</li>
+</ul>
+<h3 id="12-%e5%ae%9e%e7%8e%b0%e5%8e%9f%e7%90%86">1.2 实现原理</h3>
+<pre><code>/***** row行 ****/
+.row{ display:flex; flex-wrap:wrap; margin: 6px 0;}
+
+/***** col列 ****/
+.col, .col-sm, .col-md, .col-lg, .clo-xl,
+.col-1, ... , .col-12,
+.col-sm-1, .... , .col-sm-12,
+.col-md-1, ... , .col-md-12,
+.col-lg-1, ... , .col-lg-12,
+.col-xl-1, ... , .col-xl-12{
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* 576px以下的样式 */
+/* 列占据行宽的百分比 */
+.col { flex-basis: 0; flex-grow: 1;}
+.col-sm-1{ flex: 0 0 8.33333333%; }
+...
+.col-sm-12{ flex: 0 0 100%; }
+
+/* 列的偏移 */
+.col-offset-0 { margin-left: 0; }
+.col-offset-1 { margin-left: 8.33333333%; }
+...
+.col-offset-12 { margin-left: 100%; }
+
+/* 列的顺序 */
+.col-order-1{ order: 1; }
+...
+.col-order-12 { order: 12; }
+
+@media(min-width: 576px){ ... } /* sm的col-sm样式 *//*仅名称不一样内容一样*/
+@media(min-width: 768px){ ... } /* md的col-md样式 */
+@media(min-width: 992px){ ... } /* lg的col-lg样式 */
+@media(min-width: 1200px){ ... } /* xl的col-xl样式 */
+</code></pre>
+<ul>
+<li>实现采用移动优先：即小屏幕优先，当@media查询到当前屏幕的最小宽度为768px时，会应用 @media(min-width: 768px)里的样式覆盖前面的样式.</li>
+<li>row行容器设置为flex容器，然后flex-wrap:wrap，当行宽发生变化时，行内子元素可换行显示。</li>
+<li>row分12列(即分12份)，col-xx-1 这里的1 表示占据一行的1份，即flex: 0 0 8.33333333%;(1/12=8.333)，同理col-xx-2 2表示占据一行的2份，...</li>
+</ul>
+<h3 id="13-%e4%b8%80%e4%ba%9b%e7%bb%86%e8%8a%82">1.3 一些细节</h3>
+<pre><code>.container{ width: 100%; margin-left: auto; margin-right: auto; }
+ @media(min-width:576px){ .container{ width: 540px; } } /* sm */   
+ @media(min-width:768px){ .container{ width: 720px; } } /* md */   
+ @media(min-width:992px){ .container{ width: 960px; } } /* lg */   
+ @media(min-width:1200px){ .container{ width: 1140px; } } /* xl */ 
+</code></pre>
+<ul>
+<li>row：这里行的上下具有6px的外边距，如果不需要可在引用该css的文件后，再覆盖去掉该外边距</li>
+<li>col：这里列的左右具有15px的内边距，如果不需要可在引用该css的文件后，再覆盖去掉该内边距</li>
+<li>container：该css中还给container添加了样式，所以如果引用该文件的时候，若当前html中使用了container，可能会出现自适应情况，如上。</li>
+<li>若在html页面中引用了container类，如果不需要该样式，可在引用该css的文件后，再覆盖去掉该内边距。</li>
+</ul>
+<h2 id="2%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b">2、使用示例</h2>
+<p>下载gridFlex.css文件后，在html中引用<br>
+<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;grid.css&quot;&gt;</code></p>
+<h3 id="21-%e4%b8%8d%e5%b5%8c%e5%a5%97%e4%bd%bf%e7%94%a8">2.1 不嵌套使用</h3>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1&quot;&gt;4&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1&quot;&gt;5&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1&quot;&gt;6&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1&quot;&gt;7&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1&quot;&gt;8&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1&quot;&gt;9&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1&quot;&gt;10&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1&quot;&gt;11&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1&quot;&gt;12&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>给父容器添加row类，给其子元素添加想要的相应的col-xx-i类即可。</li>
+<li>上面例子添加的col-xx-i类的意思是：当屏幕在[0,576px)时，采用col-12样式，一列占据一行的12份，即一行一列；当屏幕在[576px,768px)时，采用col-sm-6样式，一列占据一行6份，即一行两列；同理，后面依此类推即可。</li>
+</ul>
+<h3 id="22-%e5%b5%8c%e5%a5%97%e4%bd%bf%e7%94%a8">2.2 嵌套使用</h3>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-4&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-3&quot;&gt;1.1&lt;/div&gt;
+            &lt;div class=&quot;col-3&quot;&gt;1.2&lt;/div&gt;
+            &lt;div class=&quot;col-3&quot;&gt;1.3&lt;/div&gt;
+            &lt;div class=&quot;col-3&quot;&gt;1.4&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-4&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;col-4&quot;&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>即行列里面可以再嵌套行，如上所示</li>
+</ul>
+<h3 id="23-%e4%bd%bf%e5%88%97%e5%81%8f%e7%a7%bb">2.3 使列偏移</h3>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-4&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;col-4 col-xl-offset-4&quot;&gt;1&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>使列偏移原来位置的4/12行宽距离</li>
+</ul>
+<h3 id="24-%e8%b0%83%e6%95%b4%e5%88%97%e9%a1%ba%e5%ba%8f">2.4 调整列顺序</h3>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-4 col-order-2&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;col-4 col-order-3&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;col-4 col-order-1&quot;&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="25-%e6%95%88%e6%9e%9c%e5%b1%95%e7%a4%ba">2.5 效果展示</h3>
+<p>以上2.1、2.2、2.3、2.4的效果分别如下：</p>
+<!-- <p><img src="file:///d:\MyProject\GitHubLocal\myblogs\products\css3-gridFlex\result.png" alt="alt 效果展示"></p> -->
+<h2 id="3%e6%80%bb%e7%bb%93">3、总结</h2>
+<p>综上描述了该栅格系统的实现原理、实现细节及常用的使用示范，更多的使用效果，客观可下载源码后，自己动手试试。<br>
+优点：</p>
+<ul>
+<li>不像Bootstrap那般累赘，如果仅仅只是想简单的实现响应式布局，那可以直接下载引用该css文件即可。</li>
+<li>使用简单，易上手<br>
+缺点：</li>
+<li>可能兼容性不如Bootstrap，但在设备及浏览器日渐更新的情况下，是可以放心的使用的。</li>
+</ul>
+<p><a href="https://github.com/cuteypl/cuteypl.github.io/blob/master/products/css3-gridFlex">查看源码</a></p>
+<p><a href="./products/css3-gridFlex/index.html">演示地址</a></p>
+
     </body>
     </html>

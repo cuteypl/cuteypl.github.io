@@ -248,3 +248,14 @@ body{
 .vistor-totalcount,.vistor-pagecount{
     color: #fff;
 }
+/* code pre*/
+pre{
+    background: #333;
+    color: #fff;
+}
+p{
+    padding-left: 26px; /*缩进两个字体像素*/
+}
+h3,h4{
+    padding-left: 13px;
+}

@@ -3,7 +3,7 @@ html,body{width:100%;height:100%}body{background-color:#3f3f3f}.page{position:re
 .list-btn{top:60px;left:0}.home-btn>i,.list-btn>i{display:block;width:100%;height:100%}
 .home-btn>i{background:url("../images/home.png") no-repeat center}
 .list-btn>i{background:url("../images/shejimulu.png") no-repeat center/18px 18px}
-.home-btn:hover,.list-btn:hover{background:rgba(0,0,0,0.2)}.aside-list{position:fixed;;top:114px;left:205px;width:200px;padding:10px;background:rgba(0,0,0,.5);list-style:none;list-style:disc inside;box-sizing:border-box;color:#fff;line-height:1.8}
+.home-btn:hover,.list-btn:hover{background:rgba(0,0,0,0.2)}.aside-list{position:fixed;;top:114px;left:205px;width:200px;max-height:560px;padding:10px;background:rgba(0,0,0,.5);list-style:none;list-style:disc inside;box-sizing:border-box;color:#fff;line-height:1.8;overflow:auto}
 .list-item{padding:0 8px;cursor:pointer}.list-item>a{color:#fff}.list-item:hover{background:rgba(233,233,233,.2)}
 .list-item>a:hover{text-decoration:none}.next-list{padding:0;list-style:none}.page-article{padding:30px;background:#ffc}
 @media(max-width:992px){html,body{padding:0}.aside-tool{position:relative;top:0;left:0}
@@ -27,4 +27,5 @@ html,body{width:100%;height:100%}body{background-color:#3f3f3f}.page{position:re
 .arrow-down{position:absolute;top:46px;right:0;background:url("../images/arrow-up.png") no-repeat center;transform:rotate(-180deg)}
 .page-footer{margin:46px 0 20px;color:#999}.footer-left{position:absolute;left:0;width:100px}
 .footer-right{text-align:center}.vistor-totalcount,.vistor-pagecount{color:#fff}pre{background: #333;color: #fff;}p{padding-left:26px;}
-h1,h2,h3,h4,h5,h6{padding-left:13px;font-weight:bold}
+h1,h2,h3,h4,h5,h6{padding-left:13px;font-weight:bold}.aside-list::-webkit-scrollbar{width: 6px;height: 6px;background: transparent}.aside-list::-webkit-scrollbar-thumb{background: transparent;border-radius: 4px;background: #191a37}
+.aside-list:hover::-webkit-scrollbar-thumb{background: hsla(0, 0%, 53%, 0.4);background: #191a37}.aside-list:hover::-webkit-scrollbar-track{background: hsla(0, 0%, 53%, 0.1);}

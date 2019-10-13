@@ -52,6 +52,7 @@ body{
     top: 114px;
     left: 205px;
     width: 200px;
+    max-height: 56px;
     padding: 10px;
     background: rgba(0, 0, 0, .5);
     list-style: none;
@@ -59,6 +60,7 @@ body{
     box-sizing: border-box;
     color: #fff;
     line-height: 1.8;
+    overflow: auto;
 }
 .list-item{
     padding: 0 8px;
@@ -259,4 +261,26 @@ p{
 h1,h2,h3,h4,h5,h6{
     padding-left: 13px;
     font-weight: bold;
+}
+/* 侧边目录的滚动条样式 */
+.aside-list::-webkit-scrollbar {
+    /*整个滚动条*/
+    width: 6px;
+    height: 6px;
+    background: transparent;
+}
+.aside-list::-webkit-scrollbar-thumb {
+    /*滚动条里面可以滑动的方块*/
+    background: transparent;
+    border-radius: 4px;
+    background: #191a37;
+}
+.aside-list:hover::-webkit-scrollbar-thumb {
+    /*鼠标放到出现滚动条的容器上时，滑动方块的样式*/
+    background: hsla(0, 0%, 53%, 0.4);
+    background: #191a37;
+}
+.aside-list:hover::-webkit-scrollbar-track {
+    /*鼠标放到出现滚动条的容器上时，可滑动轨迹的样式*/
+    background: hsla(0, 0%, 53%, 0.1);
 }

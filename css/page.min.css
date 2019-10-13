@@ -27,4 +27,4 @@ html,body{width:100%;height:100%}body{background-color:#3f3f3f}.page{position:re
 .arrow-down{position:absolute;top:46px;right:0;background:url("../images/arrow-up.png") no-repeat center;transform:rotate(-180deg)}
 .page-footer{margin:46px 0 20px;color:#999}.footer-left{position:absolute;left:0;width:100px}
 .footer-right{text-align:center}.vistor-totalcount,.vistor-pagecount{color:#fff}pre{background: #333;color: #fff;}p{padding-left:26px;}
-h3,h4{padding-left:13px;font-weight:bold}
+h1,h2,h3,h4,h5,h6{padding-left:13px;font-weight:bold}

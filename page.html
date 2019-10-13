@@ -50,18 +50,19 @@
         </div>
     </div>
     <script src="js/zepto.min.js"></script>
-    <script src="js/page.js"></script>
+    <script src="js/page.min.js"></script>
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
     <script>
-        console.log(location.pathname);
+        var postId = location.href.split('=').pop();
+        console.log(location.pathname+'?'+postId);
         const gitalk = new Gitalk({
             clientID: 'ee0ea3761fa7339422b3',
             clientSecret: 'e4f01ab0cba442b2c27d71fcb88f2b38fb6695c8',
             repo: 'cuteypl.github.io', //仓库名字
             owner: 'cuteypl', //仓库拥有者
             admin: ['cuteypl'], //仓库管理者
-            id: location.pathname,      // 哪篇文章的评论
+            id: location.pathname+'?'+postId,      // 哪篇文章的评论
             distractionFreeMode: false,  // 是否评论时开启遮罩
             enableHotKey: true //启用快捷键[cmd/ctrl + enter]提交评论
         });

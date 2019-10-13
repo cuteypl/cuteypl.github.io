@@ -69,6 +69,7 @@
             bodystr = bodystr.substring(6,bodystr.length-7);//将<body>和</body>去掉
             currentpageHtmlData = {'stylestr':stylestr,'bodystr':bodystr};
         }
+        console.log(currentpageHtmlData);
         return currentpageHtmlData;
     }
     /* 渲染文章的分类标签 */

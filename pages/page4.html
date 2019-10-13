@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>关于写作那些事之github告诉我构建失败，然后呢？</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+    <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+    <style>
+        .task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        h2,h3{
+            font-weight: bold;
+        }
+        p{
+            padding-left: 26px;
+        }
+        pre{
+            background: #333;
+            color: #fff;
+        }
+    </style>
+    
+    <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+</head>
+<body class="vscode-light">
+    <h1 id="%e5%85%b3%e4%ba%8e%e5%86%99%e4%bd%9c%e9%82%a3%e4%ba%9b%e4%ba%8b%e4%b9%8bgithub%e5%91%8a%e8%af%89%e6%88%91%e6%9e%84%e5%bb%ba%e5%a4%b1%e8%b4%a5%e7%84%b6%e5%90%8e%e5%91%a2">关于写作那些事之github告诉我构建失败，然后呢？</h1>
+    <h2 id="1the-page-build-failed-for-the-master-branch-with-the-following-error">1、The page build failed for the master branch with the following error</h2>
+    <p>问题描述</p>
+    <img src="./images/page4.png" alt="alt 邮件截图">
+    <p>看到这封邮件，一脸懵逼，本地运行正常，控制台并没有任何报错，登录到github网站查看网站源码已经同步过来了，但是静态网站无法同步，网站展示的数据仍然是之前的数据，按f12键也没有报错信息，着实让人摸不着头脑，真是心烦，生平最讨厌的就是结果不竟如人意，却不知道问题出在哪。辛辛苦苦完成的文章，满心欢喜的期待，结果没有看到数据。<br></p>
+    <p>我是不能带着问题入睡的人，于是一顿折腾，顺着邮件给的地址，了解了下会出现构建错误的几种情况，于是，自己先在本地服务器localhost下运行排查代码的错误，发现确实有一些错误，解决后，控制台没有报错了，但push到github上，页面展示数据还是没有更新。心里忍着十万怒火，google、百度，看了一堆乱七八糟的(瞬间觉得搜索能力真的很重要，发现问题、描述问题是解决问题的前置步骤，有时候是非常关键的一步)。搜索到的一堆答案都是由于使用Jekyll在github构建的博客，所以构建时会遵循一定的jekyll的规范，讲真，我真的特别烦这种，我不喜欢复杂，有时真的蛮讨厌框架这种东西的，因为有时候明明一个很简单的东西、很简单的功能，使用框架也许能给你带来便利，但我总觉得框架有时候是一个很累赘的东西。
+    经过一层层的剥皮，了解到应该是这么个问题，github上是使用jekyll---(一个生成静态网页的工具)来进行静态页面的构建的，但我很疑惑，我的博客并没有使用任何的框架，为何github是默认采用jekyll来进行构建github上的页面的吗？为什么要有这种绑定呢。根据这种假设，那这个问题的解决就应该是我不想要使用jekyll来进行构建，我在一篇博文里看到，</p>
+    <pre><code>If you are not using Jekyll you can disable it by including a .nojekyll file in the root of your repository.</code></pre>
+    <p>欸，已经很是憔悴的内心，死马当活马医，就这样子吧，一般涉及到一些自己不明确的问题时，都是这么解决的。</p>
+    <pre><code>$ touch .nojekyll
+    $ git add .nojekyll
+    $git commit -m 'add .nojekyll'
+    $ git push origin master
+    </code></pre>
+    <p>总算天不负我，竟然好使，源码和网站都正常更新了。但对这个问题还是真的很崩溃，表示有些厌恶github为何会有这样的机制。</p>
+    <h2 id="2%e5%b0%8f%e7%bb%93">2、小结</h2>
+    <p>对于在github的静态博客，推送数据成功，页面数据不更新，并且给你发邮件，告知构建失败的问题，据我推测，可能是github误以为我的网站是使用jekyll工具构建的，因此，增加.nojekyll文件禁用jekyll工具，自然就不会再受相关语法限制而报错了。</p>
+    <p><a href="https://www.cnblogs.com/snowdreams1006/p/10694598.html">参考</a></p>
+</body>
+</html>

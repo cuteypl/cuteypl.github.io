@@ -1,12 +1,12 @@
 {
-    "category":["HTML5","CSS3","JS"],
+    "category":["HTML5","CSS3","JS","Github"],
     "page":[{
         "year":2019,
             "data":[{
                 "id":"4",
                 "author":"cuteypl",
                 "copyright":"转载",
-                "mark":["HTML5","CSS3","JS"],
+                "mark":["Github"],
                 "date":"2019-10-13",
                 "title":"关于写作那些事之github告诉我构建失败，然后呢？",
                 "viewcount":0,

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS修改滚动条的默认样式</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+    <style>
+        .task-list-item {list-style-type: none;}
+        .task-list-item-checkbox {margin-left: -20px;vertical-align: middle;}
+        body {font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;font-size: 14px;line-height: 1.6;}
+    </style>
+</head>
+<body>
+    <h1 id="css%e4%bf%ae%e6%94%b9%e6%bb%9a%e5%8a%a8%e6%9d%a1%e7%9a%84%e9%bb%98%e8%ae%a4%e6%a0%b7%e5%bc%8f">CSS修改滚动条的默认样式
+    </h1>
+    <h2 id="1%e7%9f%a5%e8%af%86%e7%82%b9">1、知识点</h2>
+    <ul>
+        <li>&amp;::-webkit-scrollbar------------&gt;/* 整个滚动条 */</li>
+        <li>&amp;::-webkit-scrollbar-thumb------------&gt;/* 滚动条的滚动滑块 */</li>
+        <li>&amp;::-webkit-scrollbar-track------------&gt;/* 滚动条的滑动轨道 */</li>
+        <li>&amp;::-webkit-scrollbar-button------------&gt;/* 滚动条的按钮 */</li>
+        <li>&amp;::-webkit-scrollbar-corner------------&gt;/* 水平垂直滚动条相交的角落 */</li>
+        <li>&amp;::-webkit-scrollbar-track-piece------------&gt;/* 滚动条没有滑块的轨道部分 */</li>
+    </ul>
+    <h2 id="2%e8%a1%a5%e5%85%85">2、补充</h2>
+    <ul>
+        <li>&amp;::-webkit-scrollbar:horizontal/vertical(默认)------------&gt;/* 滚动条可选定水平或垂直 */</li>
+        <li>&amp;::-webkit-scrollbar-button:decrement/increment------------&gt;/* 滚动条可选定上下按钮 */</li>
+        <li>&amp;::-webkit-scrollbar-button:horizontal/vertical:decrement/increment------------&gt;/* 方向与两头按钮的组合选择 */
+        </li>
+        <li>&amp;::-webkit-resizer------------&gt;/* 某些元素的corner部分的部分样式，如textarea的可拖动按钮 */</li>
+    </ul>
+    <h2 id="3ie%e7%9a%84">3、IE的</h2>
+    <ul>
+        <li>&amp;::scrollbar-arrow-color------------&gt;/* 滚动条三箭头的颜色 */</li>
+        <li>&amp;::scrollbar-face-color------------&gt;/* 滚动滑块颜色 */</li>
+        <li>&amp;::scrollbar-track-color------------&gt;/* 滚动条轨道、按钮的背景色 */</li>
+        <li>&amp;::scrollbar-shadow-color------------&gt;/* 滚动滑块边框颜色 */</li>
+    </ul>
+    <h2 id="4%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b">4、代码示例</h2>
+    <pre><code>/*html*/
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+/*css*/
+.container{
+    width: 200px;
+    height: 400px;
+    margin: 50px auto;
+    overflow: auto;
+    background: #333;
+}
+.wrapper{
+    width: 300px;
+    height: 800px;
+    background: linear-gradient(red,yellow);
+}
+.container::-webkit-scrollbar { /* 整个滚动条的样式 */
+    width: 6px;
+    height: 6px;
+    background: transparent;
+}
+.container::-webkit-scrollbar-thumb { /* 滚动条里可滑动的方块的样式 */
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+}
+.container::-webkit-scrollbar-corner { /* 水平垂直滚动条相交的角落的样式 */
+    background: transparent;
+} 
+.container:hover::-webkit-scrollbar-thumb { /* 鼠标放上去时的可滑动方块的样式 */
+    background: hsla(0, 0%, 53%, 0.6);
+}
+.container:hover::-webkit-scrollbar-track { /* 鼠标放上去时的滑动轨迹的样式 */
+    background: hsla(0, 0%, 53%, 0.1);
+}
+</code></pre>
+    <h2 id="5%e6%95%88%e6%9e%9c">5、效果</h2>
+    <p><img src="./pages/images/page5.PNG" alt="alt 效果展示"></p>
+    <h2 id="6%e5%b0%8f%e7%bb%93">6、小结</h2>
+    <p>以上就是简单的代码示例，更复杂的，可自己动手试一试，会更有效果。</p>
+</body>
+</html>

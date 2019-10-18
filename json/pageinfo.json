@@ -1,8 +1,18 @@
 {
-    "category":["HTML(5)","CSS(3)","JS","Github"],
+    "category":["HTML(5)","CSS(3)","JS","Github","Npm"],
     "page":[{
         "year":2019,
         "data":[{
+            "id":"6",
+            "author":"cuteypl",
+            "copyright":"原创",
+            "mark":["Npm"],
+            "date":"2019-10-18",
+            "title":"关于npm install xxx -x指令的那些事儿",
+            "viewcount":0,
+            "praisecount":0,
+            "url":"./page.html?id=6"
+        },{
             "id":"5",
             "author":"cuteypl",
             "copyright":"原创",

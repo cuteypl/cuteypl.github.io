@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>关于npm install xxx -x指令的那些事儿</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+    <style>
+        .task-list-item {list-style-type: none;}
+        .task-list-item-checkbox {margin-left: -20px;vertical-align: middle;}
+        body {font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;font-size: 14px;line-height: 1.6;}
+    </style>
+</head>
+<body>
+    <h1 id="%e5%85%b3%e4%ba%8enpm-install-x--x%e6%8c%87%e4%bb%a4%e7%9a%84%e9%82%a3%e4%ba%9b%e4%ba%8b%e5%84%bf">关于npminstall x -x指令的那些事儿</h1>
+    <h2 id="1npm%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96">1、npm安装依赖</h2>
+    <h3 id="11-%e6%8c%87%e4%bb%a4">1.1 指令</h3>
+    <pre><code>npm install xxx -g  ---安装全局依赖
+npm install xxx  ---安装依赖到当前项目(npm5版本后，默认带-save参数，所以此令和带-save参数一样)
+npm install xxx -save  ---安装并写入package.json的'dependencies'中
+npm install xxx -save-dev  ----安装并写入package.json的'devDependencies'中
+</code></pre>
+    <h3 id="12-%e8%af%b4%e6%98%8e">1.2 说明</h3>
+    <ul>
+        <li>-g</li>
+    </ul>
+    <blockquote>
+        <p>-g：global的简写，对模块进行全局安装；<br>
+            所谓全局安装，是指把模块安装到操作系统上，一般会安装到AppData\Roaming\npm目录下；<br>
+            如：npm install webpack -g，就是全局安装webpack，在操作系统的任何一个目录下都可以使用webpack所提供的指令。</p>
+    </blockquote>
+    <ul>
+        <li>-D</li>
+    </ul>
+    <blockquote>
+        <p>--save-dev的简写，对模块进行局部安装并写入到 devDependencies 对象中；
+            所谓局部是只针对当前项目，一般安装到项目文件夹下的node_modules目录下；
+            devDependencies对象，是我们开发时候需要使用到的包，只用于开发阶段，真正打包上线的时候并不需要这些包，因为这些工具只是你用来打包代码的，是用来识别特定文件以及代码，帮助我们生产最终文件的。</p>
+    </blockquote>
+    <ul>
+        <li>-s</li>
+    </ul>
+    <blockquote>
+        <p>--save的简写，对模块进行局部安装并写入到dependencies对象中；<br>
+            dependencies对象，是需要发布到生产环境中的，该对象中的插件会一同发布到生产环境</p>
+    </blockquote>
+    <h2 id="2npm%e5%88%a0%e9%99%a4%e4%be%9d%e8%b5%96">2、npm删除依赖</h2>
+    <h3 id="21-%e6%8c%87%e4%bb%a4">2.1 指令</h3>
+    <pre><code>npm uninstall xxx -g  ---删除全局中的xxx依赖
+npm uninstall xxx  ---删除当前项目中的xxx依赖，但不删除package.json中对应的信息
+npm uninstall xxx -save  ---删除xxx依赖并删除package.json中dependencies下的对应信息
+npm uninstall xxx --save-dev ---删除xxx依赖并删除package.json中devDependencies下的对应信息
+</code></pre>
+    <h2 id="3%e5%85%b3%e4%ba%8enpm-install-xxx%e7%9a%84%e4%b8%80%e4%ba%9b%e7%96%91%e6%83%91">3、关于npm install xxx的一些疑惑
+    </h2>
+    <h3 id="31-%e9%97%ae%e9%a2%98">3.1 问题</h3>
+    <blockquote>
+        <p>在搜索查看关于npm install指令时，查看了些文档，有描述说 ：npm install xxx，指令后面没有带参数(如没有带-s、-g、-d)，表示是局部安装且不会更新package.json文件？</p>
+    </blockquote>
+    <h3 id="32-%e7%8e%b0%e8%b1%a1">3.2 现象</h3>
+    <blockquote>
+        <p>但实践在一个vue项目里第一次安装fastclick插件时，使用：npm install fastclick 安装完后，打开package.json文件，发现dependencies对象里添加了‘
+            &quot;fastclick&quot;: &quot;^1.0.6&quot; ’</p>
+    </blockquote>
+    <h3 id="33-%e8%a7%a3%e7%ad%94">3.3 解答</h3>
+    <blockquote>
+        <p>继续深入挖掘，了解到是npm 5版本之前，使用npm install xxx是只将模块安装到了node_modules下，但不会更新package.json文件，需要自己配置；
+            npm 5版本后，使用npm install xxx 与 npm install xxx -s一样，即默认带-save参数</p>
+    </blockquote>
+    <h2 id="4%e4%b8%80%e4%ba%9b%e8%a1%a5%e5%85%85%e8%af%b4%e6%98%8e">4、一些补充说明</h2>
+    <blockquote>
+        <p>有时候，我们clone一个vue项目会发现，运行不了，控制台报缺少相应的依赖，目录下缺少node_modules文件夹，这时在项目根目录下执行npm install
+            就会根据package.json和package-lock.json文件里的插件配置去同时安装 dependencies 和 devDependencies中的所有依赖；<br>
+            当你的项目需要在生产环境中只需要安装 dependencies 中的依赖时，执行的是npm install --production命令。（如果配置了NODE_ENV环境变量为production，那么执行npm
+            install就只安装dependencies里面的包。安装完后可以用npm ls查看安装的包的情况。）</p>
+    </blockquote>
+    <h2 id="5npm-install-%e6%8c%87%e4%bb%a4%e7%9a%84%e5%85%b6%e4%bb%96%e5%8f%82%e6%95%b0">5、npm install 指令的其他参数</h2>
+    <pre><code>npm install xxx --save-prod  简写-P，在 -D -O 不存在时，-P 就是默认值，仅安装dependencies里的包;
+npm install xxx --save-optional  简写-O，安装并注册写入可选依赖(optionalDependencies)里;
+npm install xxx --save-exact  简写-E，精确安装指定模块版本，留意package.json，可以看出版本号中的^消失了；
+npm install xxx --no-save  阻止保存记录在dependencies 中;
+npm install xxx --no-optional 跳过可选安装包;
+</code></pre>
+    <blockquote>
+        <p>Tips：在存在 package-lock.json 时npm install --no-optional你可能会发现依旧装上了可选模块，此时你可能还要加上另外一个参数执行npm install
+            --no-optional --no-package-lock才能如愿。</p>
+    </blockquote>
+    <h2 id="6%e6%80%bb%e7%bb%93">6、总结</h2>
+    <blockquote>
+        <p>只开发环境需要的使用--save-dev，生产环境需要的使用--save;<br>
+            建立一个良好的习惯，在项目中安装依赖，根据需要合理使用指令，关注package.json变化，保证减少生产环境下项目打包后体积大小；<br>
+            以上内容就是关于npm install这个指令的一些学习了，若有不对的或我了解不到位，欢迎给我留言指正，非常感谢！<br>
+            更多关于npm的指令学习，还敬请期待！</p>
+    </blockquote>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>github使用git commit -m时出现的一个小问题</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+    <style>
+        .task-list-item {list-style-type: none;}
+        .task-list-item-checkbox {margin-left: -20px;vertical-align: middle;}
+        body {font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;font-size: 14px;line-height: 1.6;}
+    </style>
+</head>
+<body>
+    <h1 id="github%e4%bd%bf%e7%94%a8git-commit--m%e6%97%b6%e5%87%ba%e7%8e%b0%e7%9a%84%e4%b8%80%e4%b8%aa%e5%b0%8f%e9%97%ae%e9%a2%98">github使用git commit -m时出现的一个小问题</h1>
+    <h2 id="1%e9%97%ae%e9%a2%98%e6%8f%8f%e8%bf%b0">1、问题描述</h2>
+    <p>今天提交文件到github时，在第二步git commit -m 'xxx'时，出现错误，错误如下：
+        <img src="./images/gitError1.png" alt="alt errorimg"></p>
+    <h2 id="2%e5%8e%9f%e5%9b%a0">2、原因</h2>
+    <p>按理， <code>git commit -m 'xxx'</code>
+        语法上是没有问题的，但总是提交不了，最后查阅文档，说是在Linux系统中，commit命令的指示信息使用单引号'xxx'包括，我使用的windows系统，信息要使用双引号&quot;xxx&quot;包括.</p>
+    <h2 id="3%e8%a7%a3%e5%86%b3">3、解决</h2>
+    <p>即第二步命令使用 <code>git commit -m&quot;xxx&quot;</code>.</p>
+    <p>参考文档：<a href="https://www.cnblogs.com/donfaquir/p/8983301.html">github 使用“git commit -m"命令时候出现的一个小问题</a></p>
+</body>
+</html>

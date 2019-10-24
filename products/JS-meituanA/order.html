@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>订单</title>
+    <link rel="icon" href="./images/comm/favicon_1.ico" size='16*16 32*32'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <script type="text/javascript">
+        (function(){
+            setRemUnit(18.75);
+            window.addEventListener('resize',function(e){setRemUnit(18.75)}); //更改屏幕尺寸时实时更改fontSize
+            window.addEventListener('pageshow',function(e){ //重新加载页面时实时更改fontSize
+                if(e.persisted){setRemUnit(18.75);} // 这里e为 PageTransitionEvent 对象，其 persisted 表示页面是从服务器(false)上加载的还是从缓存中(true)加载的
+            });
+        })();
+        /* 根据屏幕尺寸viewWidth、设备像素比dpr、 比例数ratio 进行fontSize的调整 */
+        function setRemUnit (ratio) {
+            var docEle = document.documentElement,
+                viewWidth = docEle.getBoundingClientRect().width || window.innerWidth;
+                ratio = ratio;
+            var minWidth = 320, maxWidth = 540; //1rem取这个范围的变化较为舒适；
+            if(viewWidth > maxWidth){
+                viewWidth = maxWidth;
+            }
+            else if(viewWidth < minWidth){
+                viewWidth = minWidth;
+            }
+            docEle.style.fontSize = viewWidth/ratio + 'px';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="./css/order.css">    
+</head>
+<body>
+    <!-- header start -->
+    <header class="header">订单</header>
+    <!-- header end -->
+    <!-- cotent start -->
+    <div class="content_order">
+        <ul class="order_list" id="order_list"></ul>
+        <div class="content_loading" id="content_loading">加载中</div>
+    </div>
+    <!-- content end -->
+    <!-- footer start -->
+    <footer class="footer">
+        <nav class="footer_nav" id="footer_nav">
+            <a href="index.html" class="footer_nav-a index">首页</a>
+            <a href="order.html" class="footer_nav-a order">订单</a>
+            <a href="about.html" class="footer_nav-a about">我的</a>
+        </nav>
+    </footer>
+    <!-- footer end -->
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/zepto.touch.js"></script>
+    <script src="./js/order.js"></script>
+    <script src="./js/common.js"></script>
+</body>
+</html>
+<!-- <li class="order_list-item">
+    <div class="order_list-itemTop">
+        <img class="order_list-itemTopL" src="http://p1.meituan.net/waimaipoi/957ad35a1ca2ff8408f0f5c6ca0758ab32768.jpg" alt="">
+        <div class="order_list-itemTopR">
+            <div class="order_list-itemTopRTitle"><p class="order_list-itemTopRTitle-Store one-line" href="javascript:;">十七味黄焖鸡米饭(南新店)</p><i class="order_list-itemTopRTitle-Arrow fa fa-angle-right fa-lg"></i><span class="order_list-itemTopRTitle-OrderState">订单完成</span></div>
+            <p class="order_list-itemTopRGoods">配套折扣煎蛋<span class="order_list-itemTopRGoods-Count">x1</span></p>
+            <p class="order_list-itemTopRGoods">(大份)鲜指天椒黄焖鸡米饭+青菜<span class="order_list-itemTopRGoods-Count">x1</span</p>
+            <p class="order_list-itemTopRTotal">...<span class="order_list-itemTopRTotal-Count">总计2个菜,实付<b class="order_list-itemTopRTotal-Price">¥21.52</b></span></p>
+        </div>
+    </div>
+    <div class="order_list-itemBottom"><button class="order_list-itemBottom-Btn" type="button">评价</button></div>
+</li>-->

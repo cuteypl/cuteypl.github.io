@@ -1,0 +1,76 @@
+/* body css */
+body{
+    background: rgb(238, 238, 238);
+}
+/* header css */
+.header{
+    display: flex;
+    height: 8rem;
+    background: url("../images/about/header.png") no-repeat center/cover;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header_personImg{
+    width: 3.6rem;
+    height: 3.6rem;
+    border: 3px solid rgba(255,255,255,.4);
+    border-radius: 50%;
+}
+.header_personName{
+    margin-top: .8rem;
+}
+.header_personName-Arrow{
+    margin-left: .25rem;
+}
+.header_personName-Text,.header_personName-Arrow{
+    vertical-align: middle;
+}
+
+/* content css */
+.content_list{
+    margin-top: .8rem;
+    background: #fff;
+}
+.content_list-item{
+    display: flex;
+    padding: 0 .5rem;
+    height: 2.25rem;
+    line-height: 2.3rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.content_list-item + .content_list-item{
+    border-top: 1px solid #d9d9d9;
+}
+.content_list-item > span{
+    flex: 1;
+    text-indent: .8rem;
+}
+.fa-map-marker,.fa-jpy,.fa-envelope-o,.fa-question-circle-o,.content_list-item .fa-angle-right{
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    color: #888;
+}
+.content_list-item .fa-angle-right{
+    color: #666;
+}
+.fa-envelope-o{
+    font-weight: bold;
+}
+.content_tel{
+    height: 2.3rem;
+    margin-top: .8rem;
+    background: #fff;
+    text-align: center;
+    line-height: 2.3rem;
+    color: #ffb000;
+}
+.content_time{
+    font-size: .7rem;
+    margin-top: .65rem;
+    text-align: center;
+    color: #888;
+}

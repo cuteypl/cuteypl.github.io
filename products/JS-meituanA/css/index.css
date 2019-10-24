@@ -1,0 +1,261 @@
+/* header css */
+.header{
+    position: fixed;
+    top: 0;
+    width:100%;
+    height: 2rem;
+    background: #fff;
+    font-size: .7rem;
+    z-index: 4;
+}
+.header_bar{
+    display: flex; 
+    height: 2rem; 
+    justify-content: space-between;
+    align-items: center;
+}
+.header_location{
+    width: 3.5rem;
+    text-align: center;
+    box-sizing: border-box;
+    color: #666;
+}
+.header_location-text{
+    padding-right:.2rem;
+    font-size: .7rem;
+}
+.header_search{
+    position: relative;
+    width: 13rem;
+    box-sizing: border-box;
+    line-height: 1.4rem;
+}
+.header_search-input{
+    width: 100%;
+    height: 1.4rem;
+    border: none;
+    border-radius: .7rem; 
+    text-indent: 1.6rem;
+    background-color: rgba(238, 238, 238, 0.8);
+}
+.header_search-input:focus{
+    outline: none;
+}
+input[type="search" i]::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+.header_search .fa-myclose{
+    position: absolute;
+    top: .25rem;
+    right: .3rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: rgb(200, 200, 200, 0.8);
+    text-align: center;
+    line-height: 1rem;
+    color: #fff;
+}
+.header_search .fa-search{
+    position: absolute;
+    left: .3rem;
+    color: #999;
+    line-height: 1.4rem;
+}
+.header_towcode{
+    width: 2.25rem;
+    height: 2rem;
+    background: url("../images/index/saoyisao.png") no-repeat center;
+    background-size: 1.9rem 1.9rem;
+}
+.header_twocode-list{
+    position: absolute;
+    top: 2.25rem;
+    right: 0.3rem;
+    padding: 0 1rem;
+    background: rgba(49, 49, 49, 0.8);
+    border-radius: .25rem;
+    color: #fff;
+    z-index: 2;
+}
+.header_twocode-list::before{
+    display: block;
+    content: "\f0d8";
+    position: absolute;
+    top: -0.6rem;
+    right: 0.6rem;
+    font-family: FontAwesome;
+    color: rgba(49, 49, 49, 0.8);
+    font-size: 1rem;
+}
+.header_twocode-icon{
+    padding-right: 0.2rem;
+    background: url("../images/index/saoyisao01.png") no-repeat 0.2rem;
+    background-size: 1rem 1rem;
+    line-height: 2.2rem;
+    text-indent: 1.6rem; 
+    cursor: pointer;
+}
+.header_twocode-icon:nth-of-type(2){
+    background: url("../images/index/qrcode.png") no-repeat left;
+    background-size: 1.4rem 1.4rem;
+    border-top: 1px solid #999;
+}
+.swiper-container{
+    margin-top: 2rem;
+}
+.swiper-slide > img{
+    width: 100%;
+    height: 6rem;
+}
+/* .swiper-slide:nth-of-type(1){
+    background: url("../images/index/banner1.png") no-repeat center/cover;
+}
+.swiper-slide:nth-of-type(2){
+    background: url("../images/index/banner2.png") no-repeat center/cover;
+}
+.swiper-slide:nth-of-type(3){
+    background: url("../images/index/banner3.png") no-repeat center/cover;
+}
+.swiper-slide:nth-of-type(4){
+    background: url("../images/index/banner4.png") no-repeat center/cover;
+}
+.swiper-slide:nth-of-type(5){
+    background: url("../images/index/banner5.png") no-repeat center/cover;
+} */
+/* .header_banner{
+    position: absolute;
+    width: 100%;
+    height: 6rem;
+    background: #333;
+    overflow: hidden;
+    z-index: -1;
+}
+.header_banner-list{
+    display: flex;
+    width: 500%;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.header_banner-img{
+    flex: 1;
+    width: 100%;
+    background: url("../images/index/banner.png") no-repeat center/cover;
+} */
+
+/* category css */
+.category_nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-size: .65rem; /*0.65*20=13px*/
+}
+.category_nav-a{
+    width: 25%;
+}
+.category_nav-img{
+    width: 2.4rem;
+    margin: .7rem 0;
+}
+
+/* content css */
+.content{
+    margin-bottom: 2.5rem;
+}
+.content_title{
+    margin: 1.5rem 0 0.6rem 0;
+    text-align: center;
+}
+.content_title-line{
+    display: inline-block;
+    width: 5rem;
+    height: .075rem;
+    margin: 0 0.5rem;
+    background: #aaa;
+    vertical-align: middle;
+}
+.content_list-item{
+    display: flex;
+    padding: .75rem .5rem;
+}
+.content_list-itemL{
+    position: relative;
+    flex: 1;
+}
+.content_list-itemLImg{
+    width: 4.5rem;
+    height: 3.3rem;
+}
+.content_list-itemLBrand{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.1rem;
+    font-size: .65rem; /*0.65*20=13px*/
+    color: #fff;
+}
+.Brand-Old{
+    background:#ffa627;
+}
+.Brand-New{
+    background:#21c56c;
+}
+.content_list-itemR{
+    flex: 3;
+}
+.content_list-itemR{
+    margin-left: .4rem;
+}
+.content_list-itemRDesc,.content_list-itemRSendPrice{ 
+    font-size: .6rem;
+    color: #666;
+}
+.fa-star,.fa-star-half-full{
+    color: #ffa627;
+}
+.content_list-itemROtherTipsUL{
+    font-size: .65rem;
+    color: #888;
+}
+.content_list-itemRDesc{
+    margin-top: .65rem;
+}
+.content_list-itemRSendPrice,.content_list-itemROtherTipsUL{
+    margin-top: .6rem;
+}
+.content_list-itemRTime{
+    float: right;
+}
+.content_list-itemRDistance{
+    float: right;
+}
+.content_list-itemROtherTipsUL-li{
+    height: 1.1rem;
+    line-height: 1.1rem;
+}
+.fa-myticket,.fa-mycoupon,.fa-myrefund{
+    display: inline-block;
+    width: .65rem;
+    height: .65rem;
+    text-align: center;
+    line-height: .6rem;
+}
+.fa-myticket{
+    border: 1px solid #888;
+    color: blue;
+}
+.fa-mycoupon{
+    padding: .05rem;
+    color: #fff;
+    background:pink;
+}
+.fa-myrefund{
+    padding: .05rem;
+    color: #fff;
+    background: red;
+}
+
+

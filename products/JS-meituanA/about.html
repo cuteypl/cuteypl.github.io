@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的</title>
+    <link rel="icon" href="./images/comm/favicon_1.ico" size='16*16 32*32'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <script type="text/javascript">
+        (function(){
+            setRemUnit(18.75);
+            window.addEventListener('resize',function(e){setRemUnit(18.75)}); //更改屏幕尺寸时实时更改fontSize
+            window.addEventListener('pageshow',function(e){ //重新加载页面时实时更改fontSize
+                if(e.persisted){setRemUnit(18.75);} // 这里e为 PageTransitionEvent 对象，其 persisted 表示页面是从服务器(false)上加载的还是从缓存中(true)加载的
+            });
+        })();
+        /* 根据屏幕尺寸viewWidth、设备像素比dpr、 比例数ratio 进行fontSize的调整 */
+        function setRemUnit (ratio) {
+            var docEle = document.documentElement,
+                viewWidth = docEle.getBoundingClientRect().width || window.innerWidth;
+                ratio = ratio;
+            var minWidth = 320, maxWidth = 540; //1rem取这个范围的变化较为舒适；
+            if(viewWidth > maxWidth){
+                viewWidth = maxWidth;
+            }
+            else if(viewWidth < minWidth){
+                viewWidth = minWidth;
+            }
+            docEle.style.fontSize = viewWidth/ratio + 'px';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="./css/about.css">    
+</head>
+<body>
+    <!-- header start -->
+    <header class="header">
+        <img class="header_personImg" src="http://i.waimai.meituan.com/static/img/default-avatar.png" alt="">
+        <p class="header_personName"><span class="header_personName-Text">美团小骑手</span><i class="header_personName-Arrow fa fa-angle-right fa-lg"></i></p>
+    </header>
+    <!-- header end -->
+    <!-- content start -->
+    <div class="content">
+        <ul class="content_list">
+            <li class="content_list-item item-Address"><i class="fa fa-map-marker fa-lg"></i><span>收货地址管理</span><i class="fa fa-angle-right fa-lg"></i></li>
+            <li class="content_list-item item-Coupon"><i class="fa fa-jpy fa-lg"></i><span>商家代金券</span><i class="fa fa-angle-right fa-lg"></i></li>
+        </ul>
+        <ul class="content_list">
+            <li class="content_list-item item-Suggestion"><i class="fa fa-envelope-o"></i><span>意见反馈</span><i class="fa fa-angle-right fa-lg"></i></li>
+            <li class="content_list-item item-Problem"><i class="fa fa-question-circle-o fa-lg"></i><span>常见问题</span><i class="fa fa-angle-right fa-lg"></i></li>
+        </ul>
+        <p class="content_tel">客服电话:&nbsp;101-097-77</p>
+        <p class="content_time">服务时间:&nbsp;9:00-23:00</p>
+    </div>
+    <!-- content end -->
+    <!-- footer start -->
+    <footer class="footer">
+        <nav class="footer_nav">
+            <a href="index.html" class="footer_nav-a index active">首页</a>
+            <a href="order.html" class="footer_nav-a order">订单</a>
+            <a href="about.html" class="footer_nav-a about">我的</a>
+        </nav>
+    </footer>
+    <!-- footer end -->
+    <script src="./js/common.js"></script>
+</body>
+</html>

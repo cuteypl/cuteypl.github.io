@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>深圳麦当劳前海二餐厅</title>
+    <link rel="icon" href="./images/comm/favicon_1.ico" size='16*16 32*32'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <script type="text/javascript">
+        (function(){
+            setRemUnit(18.75);
+            window.addEventListener('resize',function(e){setRemUnit(18.75)}); //更改屏幕尺寸时实时更改fontSize
+            window.addEventListener('pageshow',function(e){ //重新加载页面时实时更改fontSize
+                if(e.persisted){setRemUnit(18.75);} // 这里e为 PageTransitionEvent 对象，其 persisted 表示页面是从服务器(false)上加载的还是从缓存中(true)加载的
+            });
+            initTitleAndHead();
+        })();
+        /* 根据屏幕尺寸viewWidth、设备像素比dpr、 比例数ratio 进行fontSize的调整 */
+        function setRemUnit (ratio) {
+            var docEle = document.documentElement,
+                viewWidth = docEle.getBoundingClientRect().width || window.innerWidth;
+                ratio = ratio;
+            var minWidth = 320, maxWidth = 540; //1rem取这个范围的变化较为舒适；
+            if(viewWidth > maxWidth){
+                viewWidth = maxWidth;
+            }
+            else if(viewWidth < minWidth){
+                viewWidth = minWidth;
+            }
+            docEle.style.fontSize = viewWidth/ratio + 'px';
+        }
+        function initTitleAndHead(){
+            var urlstr = window.location.href;
+            urlstr = decodeURIComponent(urlstr); //对url进行解码，不然url中的汉字会乱码
+            var strArr = urlstr.split('?').pop();
+            strArr = strArr.toString().split('&&');
+            var str = strArr[1].toString();
+            document.title = str;
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="./css/menu.css">    
+</head>
+<body>
+    <!-- header start -->
+    <header class="header"><i id="header_back" class="fa fa-angle-left fa-2x"></i><h4 class="header_title"></h4></header>
+    <!-- header end -->
+    <!-- content start -->
+    <div class="content">
+        <nav class="content_topNav">
+            <a class="content_topNav-item active" href="javascrpit:;">点菜</a>
+            <a class="content_topNav-item" href="javascrpit:;">评价</a>
+            <a class="content_topNav-item" href="javascrpit:;">商家</a>
+        </nav>
+        <div class="content_bottomWrap">
+            <nav class="content_leftNav" id="content_leftNav"></nav>
+            <div class="content_rightDesc">
+                <p class="content_rightTitle" id="content_rightTitle"></p>
+                <ul class="content_rightList" id="content_rightList"></ul>
+            </div>
+        </div>
+        <div class="content_bottomWrap comment none">暂无数据</div>
+        <div class="content_bottomWrap storeinfo none">暂无数据</div>
+    </div>
+    <!-- content end -->
+    <!-- shop start -->
+    <div class="shop">
+        <div class="shop_top none" id="shop_top">
+            <div class="shop_top-clearcar"><span id='shop_top-clearcarBtn'><i class="fa fa-trash-o fa-lg"></i>清空购物车</span></div>
+            <ul class="shop_top-goodslist" id="shop_top-goodslist"></ul>
+        </div>
+        <div class="shop_bottom">
+            <div class="shop_bottom-car" id="shop_bottom-car">
+                <!-- <div class="shop_bottom-car-goodsNum" id="shop_bottom-goodsNum">1</div> -->
+            </div>
+            <div class="shop_bottom-price">
+                <p class="shop_bottom-priceGoods">￥<span class="shop_bottom-priceGoodsNum" id="shop_bottom-priceGoodsNum">0</span></p>
+                <p class="shop_bottom-priceOthers">另需配送费&nbsp;￥<span class="shop_bottom-priceOthersNum" id="shop_bottom-priceOthersNum">6</span></p>
+            </div>
+            <button class="shop_bottom-submit" type="button">去结算</button>
+        </div>
+    </div>
+    <!-- shop start -->
+    <div class="mask none" id="mask"></div>
+    <script>
+        var backBtn = document.getElementById("header_back");
+        backBtn.addEventListener("click",backFn);
+        function backFn(){
+            history.back();
+        }
+    </script>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/zepto.touch.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+</body>
+</html>
+<!-- <a class="content_leftNav-item active" href="javascrpit:;"><img class="content_leftNav-item-icon" src="http://p1.meituan.net/aichequan/87f966955f693102d67daf2ec44b58411361.png">热销</a>
+    <a class="content_leftNav-item" href="javascrpit:;"><img class="content_leftNav-item-icon" src="http://p0.meituan.net/aichequan/45662b4d1968fd75bff38de23f6d62641421.png">折扣</a>
+    <a class="content_leftNav-item" href="javascrpit:;">新品</a>
+-->
+<!-- <span class="content_rightMainTitle">热销</span><span class="content_rightSubTitle">大家喜欢吃，才叫真好吃</span> -->
+<!-- <li class="content_rightItem">
+        <img class="content_rightItem-img" src="http://p0.meituan.net/xianfuwm/38bbfa3f955cbce3330f1cb6818d0ce6216794.png" alt="">
+        <div class="content_rightItem-detail">
+            <h4 class="content_rightItem-title">麦辣鸡翅2块</h4>
+            <p class="content_rightItem-desc">麦辣鸡翅2块(主要原料：鸡肉，腌料，裹粉，油)</p>
+            <p class="content_rightItem-praise">赞7</p>
+            <div class="content_rightItem-info">
+                <p class="content_rightItem-price"><span class="content_rightItem-priceNum">￥11.5</span>/例</p>
+                <p class="content_rightItem-buycount"><span class="minus-btn"></span><span class="count-text">0</span><span class="plus-btn"></span></p>
+            </div>
+        </div>
+    </li>
+ -->
+ <!-- <li class="shop_top-goodslis-item">
+            <p class="shop_top-goodslis-itemGoodsName">薯条（大）</p>
+            <p class="shop_top_goodslist-itemPrice">￥<span class="shop_top_goodslist-itemPriceNum">13</span></p>
+            <p class="content_rightItem-buycount"><span class="minus-btn"></span><span class="count-text">0</span><span class="plus-btn"></span></p>                    
+        </li>
+ -->

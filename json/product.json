@@ -9,7 +9,15 @@
                 "copyright":"原创",
                 "mark":["vue"],
                 "date":"2019-10-20",
-                "title":"Vue实战之商城app",
+                "title":"使用原生JS实现的仿美团外卖App",
+                "url":"./products/JS-meituanA/index.html"
+            },{
+                "id":"6",
+                "author":"cuteypl",
+                "copyright":"原创",
+                "mark":["vue"],
+                "date":"2019-10-20",
+                "title":"使用Vue实现的一款商城app",
                 "url":"./products/vue-mobileapp/index.html"
             },{
                 "id":"5",
@@ -17,7 +25,7 @@
                 "copyright":"原创",
                 "mark":["vue"],
                 "date":"2019-10-20",
-                "title":"Vue实战之旅游App",
+                "title":"使用Vue实现的一款旅游App",
                 "url":"./products/vue-tourapp/index.html"
             },{
                 "id":"4",

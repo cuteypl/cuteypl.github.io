@@ -122,7 +122,7 @@ function getDataToContentList(){
         var list = null;
         $.ajax({
             type:'GET',
-            url: './json/homelist.json', 
+            url: 'https://cuteypl.github.io/products/JS-meituanA/json/homelist.json', 
             async: false, //true---异步 false---同步,此处要为同步加载数据，否则list没有数据
             success: function(data){
                     console.log(data);

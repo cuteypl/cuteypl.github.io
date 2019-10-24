@@ -15,7 +15,7 @@ function getList(){
     var list = null;
     $.ajax({
         type:'GET',
-        url: './json/food.json', 
+        url: 'https://cuteypl.github.io/products/JS-meituanA/json/food.json', 
         async: false, //true---异步 false---同步,此处要为同步加载数据，否则list没有数据
         success: function(data){
                 console.log(data);

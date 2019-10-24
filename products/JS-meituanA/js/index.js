@@ -122,7 +122,7 @@ function getDataToContentList(){
         var list = null;
         $.ajax({
             type:'GET',
-            url: '../json/homelist.json', 
+            url: './json/homelist.json', 
             async: false, //true---异步 false---同步,此处要为同步加载数据，否则list没有数据
             success: function(data){
                     console.log(data);
@@ -205,21 +205,3 @@ function toStoreMenu(storeId,storeName){
     window.open('menu.html?'+urldata,'_self', true);
 }
 
-$.get('../json/restanurant.json', function(data){
-    console.log(data);
-});
-$.get('../json/comments.json', function(data){
-    console.log(data);
-});
-$.get('../json/filter.json', function(data){
-    console.log(data);
-});
-$.get('../json/head.json', function(data){
-    console.log(data);
-});
-$.get('../json/listparams.json', function(data){
-    console.log(data);
-});
-$.get('../json/orders.json', function(data){
-    console.log(data);
-});

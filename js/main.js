@@ -231,10 +231,18 @@
             }
             type=2;//更改 标志 当前页为我的作品,全局变量
             productData = getPageOrProductInfoData('../json/product.json');//,全局变量
-            initPageOrProductList(artOrProList,productData.product,1,persize);//初始化首页的文章列表
+            initPageOrProductList(artOrProList,productData.product,1,persize);//初始化作品的文章列表
             initpagenation(midPagenation,getDataLenth(productData,type),persize);//初始化分页器列表
             sessionStorage.setItem('productData',JSON.stringify(productData));
         }
+        //最新改动
+        else if(index===2){//生活语录
+            productData = getPageOrProductInfoData('../json/product.json');//,全局变量
+            initPageOrProductList(artOrProList,productData.product,1,persize);//初始化生活语录的文章列表
+            initpagenation(midPagenation,getDataLenth(productData,type),persize);//初始化分页器列表
+            sessionStorage.setItem('productData',JSON.stringify(productData));
+        }
+        //最新改动
         else if(index===4){
             location.href = 'https://github.com/cuteypl';
         }

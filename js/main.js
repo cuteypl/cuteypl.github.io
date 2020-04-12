@@ -237,6 +237,8 @@
         }
         //最新改动
         else if(index===2){//生活语录
+            //type=2;
+            console.log(index=2);
             productData = getPageOrProductInfoData('../json/product.json');//,全局变量
             initPageOrProductList(artOrProList,productData.product,1,persize);//初始化生活语录的文章列表
             initpagenation(midPagenation,getDataLenth(productData,type),persize);//初始化分页器列表

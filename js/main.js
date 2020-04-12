@@ -12,6 +12,7 @@
     var pageinfoData = null; //博客首页的总文章信息数据
     var currentCategoryData = null; //存储分类下的文章信息数据,为obj类型
     var productData = null; //我的作品的总信息数据
+    var lifecordData = null; //生活语录的总信息数据
     var persize = 15; //每页显示的文章数
     var type = 1; //1代表当前为博客首页，2代表当前为我的作品页，3代表当前为分类页
     
@@ -26,7 +27,7 @@
 
     headerBtn.addEventListener('click',function(e){toggleClass(headerTips,'block')});
     headerTips.addEventListener('click',function(e){targetShow(e,headerSwitchUls);toggleClass(headerTips,'block');});/* 点击菜单、分类、关于我，分别对应显示menu、category、about,且点击完之后显示 */
-    headerCatory.addEventListener('click',function(e){type=3,currentCategoryData = getCategoryData(e,pageinfoData.page);initCategoryTitleList(artOrProList,currentCategoryData,1,persize); initpagenation(midPagenation,currentCategoryData.data.length,persize);});//初始化分类文章列表
+    headerCatory.addEventListener('click',function(e){type=4,currentCategoryData = getCategoryData(e,pageinfoData.page);initCategoryTitleList(artOrProList,currentCategoryData,1,persize); initpagenation(midPagenation,currentCategoryData.data.length,persize);});//初始化分类文章列表
     headerMenu.addEventListener('click',function(e) {switchHeaderMenu(e);});
     midPagenation.addEventListener('click',function(e){switchPageNation(e,artOrProList,persize,type)});
     arrowUp.addEventListener('click',toTop);
@@ -237,12 +238,12 @@
         }
         //最新改动
         else if(index===2){//生活语录
-            //type=2;
+            type=3;
             console.log(index=2);
-            productData = getPageOrProductInfoData('../json/product.json');//,全局变量
-            initPageOrProductList(artOrProList,productData.product,1,persize);//初始化生活语录的文章列表
-            initpagenation(midPagenation,getDataLenth(productData,type),persize);//初始化分页器列表
-            sessionStorage.setItem('productData',JSON.stringify(productData));
+            lifecordData = getPageOrProductInfoData('../json/lifecord.json');//全局变量        
+            initPageOrProductList(artOrProList,lifecordData.lifecord,1,persize);//初始化生活语录的文章列表
+            initpagenation(midPagenation,getDataLenth(lifecordData,type),persize);//初始化分页器列表
+            sessionStorage.setItem('productData',JSON.stringify(lifecordData));
         }
         //最新改动
         else if(index===4){
@@ -267,7 +268,7 @@
             else{
                 addClass(e.target,'pagenav-active');
             }
-            if(type===3){
+            if(type===4){
                 initCategoryTitleList(ele,currentCategoryData,parseInt(text),persize);//调用initCategoryTitleList初始化分类文章列表
             }
             else if(type===2){

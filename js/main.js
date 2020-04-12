@@ -98,7 +98,7 @@
                 pageOrproductData = data || [];
             }
         });
-        console.log(pageOrproductData);
+        //console.log(pageOrproductData);
         return pageOrproductData;
     }
     /* 初始化文章分类菜单 */
@@ -109,7 +109,7 @@
             str += '<li class="header-catoryLi">'+categoryArr[i]+'</li>';
             ele.innerHTML = str;
         }
-        console.log(str);
+        //console.log(str);
     }
     /* 点击首页或作品 */
     function initPageOrProductList(ele,datas,pagenum,persize){
@@ -185,7 +185,7 @@
             datas = datas.page;
             for(var i=0,len=datas.length; i<len; i++){
                 totalcount += datas[i].data.length;
-                console.log(totalcount);
+                //console.log(totalcount);
             }
         }
         else if(type===2){//type为2时，代表是作品,此时的data要求为data.product，依据productinfo.json的配置来
@@ -245,9 +245,9 @@
         //最新改动
         else if(index===2){//生活语录
             type=3;
-            console.log(index=2);
+            //console.log(index=2);
             lifecordData = getPageOrProductInfoData('../json/lifecord.json');//全局变量
-            console.log(lifecordData);  
+            //console.log(lifecordData);  
             initPageOrProductList(artOrProList,lifecordData.lifecord,1,persize);//初始化生活语录的文章列表
             initpagenation(midPagenation,getDataLenth(lifecordData,type),persize);//初始化分页器列表
             sessionStorage.setItem('lifecordData',JSON.stringify(lifecordData));

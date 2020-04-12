@@ -252,8 +252,8 @@
             initpagenation(midPagenation,getDataLenth(lifecordData,type),persize);//初始化分页器列表
             sessionStorage.setItem('lifecordData',JSON.stringify(lifecordData));
         }
-        else if(index===3){
-            location.href = '../resume.html';
+        else if(index===3){//个人简历 
+            location.href = 'https://cuteypl.github.io/resume.html';
         }
         //最新改动
         else if(index===4){

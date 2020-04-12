@@ -194,7 +194,13 @@
                 totalcount += datas[i].data.length;
             }
         }
-        else{//type为3，为分类情况下的
+        else if(type===3){//type为2时，代表是作品,此时的data要求为data.product，依据productinfo.json的配置来
+            datas = datas.lifecord;
+            for(var i=0,len=datas.length; i<len; i++){
+                totalcount += datas[i].data.length;
+            }
+        }
+        else{//type为4，为分类情况下的
             totalcount = datas.length;
         }
         return totalcount;
@@ -240,10 +246,11 @@
         else if(index===2){//生活语录
             type=3;
             console.log(index=2);
-            lifecordData = getPageOrProductInfoData('../json/lifecord.json');//全局变量        
+            lifecordData = getPageOrProductInfoData('../json/lifecord.json');//全局变量
+            console.log(lifecordData);  
             initPageOrProductList(artOrProList,lifecordData.lifecord,1,persize);//初始化生活语录的文章列表
             initpagenation(midPagenation,getDataLenth(lifecordData,type),persize);//初始化分页器列表
-            sessionStorage.setItem('productData',JSON.stringify(lifecordData));
+            sessionStorage.setItem('lifecordData',JSON.stringify(lifecordData));
         }
         //最新改动
         else if(index===4){

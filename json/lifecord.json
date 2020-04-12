@@ -1,8 +1,16 @@
 {
-    "category":["心情","吐槽","梦想","星座","故事"],
+    "category":["心情","吐槽","梦想","星座","故事","人生","有感"],
     "lifecord":[{
         "year":2020,
         "data":[{
+            "id":"4",
+            "author":"cuteypl",
+            "copyright":"原创",
+            "mark":["有感"],
+            "date":"2020-04-13",
+            "title":"时间从不语，却回答了所有人的答案。",
+            "url":"javascript:void(0);"
+        },{
             "id":"3",
             "author":"cuteypl",
             "copyright":"摘录",

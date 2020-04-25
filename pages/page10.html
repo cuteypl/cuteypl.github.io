@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>记一次机考---字符串排列组合、求一个正整数是否是一个连续正整数之和</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="%e8%ae%b0%e4%b8%80%e6%ac%a1%e6%9c%ba%e8%80%83%e8%af%95%e9%a2%98---%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%8e%92%e5%88%97%e7%bb%84%e5%90%88%e6%b1%82%e4%b8%80%e4%b8%aa%e6%ad%a3%e6%95%b4%e6%95%b0%e6%98%af%e5%90%a6%e6%98%af%e4%b8%80%e4%b8%aa%e8%bf%9e%e7%bb%ad%e6%ad%a3%e6%95%b4%e6%95%b0%e4%b9%8b%e5%92%8c">记一次机考试题---字符串排列组合、求一个正整数是否是一个连续正整数之和</h1>
+<h2 id="%e5%86%99%e5%9c%a8%e5%89%8d%e9%9d%a2%e7%9a%84%e8%af%9d">写在前面的话：</h2>
+<pre><code>这次考试，虽然没有过，也挺失落和不甘心的，承认自己差需要勇气，改变状态需要耐心和坚持；但平常给自己加一些挑战也未常不是一件值得去做的事情，每一次的挑战失败，能让你认清不足，能让你跳出当前舒适圈和保持一定的忧虑，而挑战成功，则能收获一次喜悦、成就，增加自己的信心。
+这次机考，共两题，都不算是难的题，没有用到什么动态规划、背包、快排、树等，只是近期脑袋有点宕机状态；人擅长一件事，都是从重复开始的，重复到你遇到这类事情，大脑会本能条件的反射。
+</code></pre>
+<h2 id="%e9%a2%98%e7%9b%ae%e8%be%93%e5%85%a5%e4%b8%80%e4%b8%aa%e6%ad%a3%e6%95%b4%e6%95%b0%e8%8b%a5%e8%af%a5%e6%95%b0%e8%83%bd%e7%94%a8%e5%87%a0%e4%b8%aa%e8%bf%9e%e7%bb%ad%e6%ad%a3%e6%95%b4%e6%95%b0%e4%b9%8b%e5%92%8c%e8%a1%a8%e7%a4%ba%e5%88%99%e8%be%93%e5%87%batrue%e5%90%a6%e5%88%99%e8%be%93%e5%87%bafalse">题目：输入一个正整数，若该数能用几个连续正整数之和表示，则输出true，否则输出false</h2>
+<pre><code>例如，15=1+2+3+4+5 或 =4+5+6 或 =7+8等
+输入：15 ；输出：YES；输入：16；输出：NO
+思路：相加之数为连续，且通过分析可知隐形的一个条件就是相加之树不可能大于（N/2）+1；若再进一步思考可以使用到等差数列，转为列举n下求其等差数列开始之数a1若为整则为true，否则为false；但当时我没想这么多，就直接暴力解决了；
+`#虽暴力解决，但也是有可优化的地方的，这是我后来考完试后，自己调整优化后的代码
+#inputNum=236567717;
+var inputNum=readline();
+var Num=Number(inputNum);
+if(Num&lt;=1){  //如果Num小于等于1，直接返回NO
+    console.log('NO');
+}
+else{  //否则，两层循环遍历mid之前的数字相加
+    var mid=parseInt((Num/2)+1); //加数不可能大于Num的一半加一
+    var res=0;  //加数之和
+    var i=0,j=0; 
+    for(i=1;i&lt;=mid;i++){  //从1开始遍历循环相加小于mid之前的数字
+        res=0;
+        for(j=i;j&lt;=mid;j++){  //若从1开始相加没有满足的，则从2开始相加，依此类推，直至求出和数和Num相等即返回
+            res+=j;
+            // console.log(res);
+            if(res==Num){  
+                break;
+            }
+            else if(res&gt;Num){
+                break;
+            }
+        }
+        if(res==Num){
+            break;
+        }
+    }
+    if(res==Num){
+        console.log('YES');
+    }
+    else{
+        console.log('NO');
+    }
+    console.log(res);
+}`
+</code></pre>
+
+    </body>
+    </html>

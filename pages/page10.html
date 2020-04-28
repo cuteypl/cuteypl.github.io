@@ -2,7 +2,7 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>记一次机考---字符串排列组合、求一个正整数是否是一个连续正整数之和</title>
+        <title>记一次机考试题---字符串排列组合、求一个正整数是否是一个连续正整数之和</title>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
@@ -66,6 +66,37 @@ else{  //否则，两层循环遍历mid之前的数字相加
     console.log(res);
 }`
 </code></pre>
+<h2 id="%e9%a2%98%e7%9b%ae%e5%ad%97%e7%ac%a6%e4%b8%b2aba%e7%9a%84%e6%8e%92%e5%88%97%e7%bb%84%e5%90%88">题目：字符串ABA的排列组合</h2>
+<pre><code class="language-var"><div>var arr=[];
+arr.push(inputStr);
+if(inputStr.length==0){console.log(0)}
+var i=0,j=0,k=0;
+// var str,str1,str2,str3;
+for(i=1;i&lt;inputStr.length;i++){
+    var str=inputStr;
+    // console.log(str);
+    for(j=0;j&lt;str.length;j++){
+        var str1=str.substr(j,i);
+        if(str1.length&lt;i){
+            break;
+        }
+        var str2=str.substring(0,j)+str.substring(j+i);
+        // console.log(str1);
+        // console.log(str2);
+        for(k=1;k&lt;=str2.length;k++){
+            var str3=str2.substring(0,k)+str1+str2.substring(k);
+            // console.log(str3);
+            if(arr.length!=0 &amp;&amp; arr.indexOf(str3)==-1){
+                arr.push(str3);
+            }  
+        }
+    }
+    // console.log('\n');
+}
+console.log(arr.length); ```
+
+
+</div></code></pre>
 
     </body>
     </html>
